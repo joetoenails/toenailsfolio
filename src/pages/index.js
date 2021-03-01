@@ -1,150 +1,145 @@
-import * as React from "react"
+import * as React from "react";
+import styled, { keyframes } from "styled-components";
+import "@fontsource/shrikhand";
+import "@fontsource/cabin";
+import "@fontsource/fira-sans";
+
+import { useTransition, animated } from "react-spring";
+
+const palette = {
+  one: "#7BA39A",
+  two: "#029676",
+  three: "#525563",
+  fourt: "#044F3F",
+};
 
 // styles
 const pageStyles = {
   color: "#232129",
   padding: "96px",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
+};
 const headingStyles = {
   marginTop: 0,
+  marginBottom: 30,
+  maxWidth: 500,
+  fontFamily: "shrikhand",
+  letterSpacing: "1.2px",
+  fontSize: "2.5em",
+};
+const heading2 = {
+  color: palette.two,
+  marginTop: 0,
   marginBottom: 64,
-  maxWidth: 320,
-}
-const headingAccentStyles = {
-  color: "#663399",
-}
-const paragraphStyles = {
-  marginBottom: 48,
-}
-const codeStyles = {
-  color: "#8A6534",
-  padding: 4,
-  backgroundColor: "#FFF4DB",
-  fontSize: "1.25rem",
-  borderRadius: 4,
-}
-const listStyles = {
-  marginBottom: 96,
-  paddingLeft: 0,
-}
-const listItemStyles = {
-  fontWeight: "300",
-  fontSize: "24px",
-  maxWidth: "560px",
-}
+  maxWidth: 500,
+  fontFamily: "shrikhand",
+  letterSpacing: "1px",
+};
 
-const linkStyle = {
-  color: "#8954A8",
-  fontWeight: "bold",
-  fontSize: "16px",
-  verticalAlign: "5%",
-}
+const transMain = {
+  display: "flex",
+  flexDirection: "row",
+  justifyContent: "center",
+  alignContent: "center",
+  width: 250,
+  height: 20,
+  marginRight: "0%",
 
-const docLinkStyle = {
-  ...linkStyle,
-  listStyleType: "none",
-  marginBottom: 24,
-}
+  color: "black",
+  fontFamily: "cabin",
+  fontWeight: 600,
+  fontSize: "1.5em",
+};
 
-const descriptionStyle = {
-  color: "#232129",
-  fontSize: "14px",
-}
+const roles = [
+  "developer",
+  "event producer",
+  "marriage officiant",
+  "dungeon master",
+  "project manager",
+  "birdwatcher",
+];
 
-const docLink = {
-  text: "Documentation",
-  url: "https://www.gatsbyjs.com/docs/",
-  color: "#8954A8",
-}
-// data
-const links = [
-  {
-    text: "Tutorial",
-    url: "https://www.gatsbyjs.com/docs/tutorial/",
-    description:
-      "A great place to get started if you're new to web development. Designed to guide you through setting up your first Gatsby site.",
-    color: "#E95800",
-  },
-  {
-    text: "How to Guides",
-    url: "https://www.gatsbyjs.com/docs/how-to/",
-    description:
-      "Practical step-by-step guides to help you achieve a specific goal. Most useful when you're trying to get something done.",
-    color: "#1099A8",
-  },
-  {
-    text: "Reference Guides",
-    url: "https://www.gatsbyjs.com/docs/reference/",
-    description:
-      "Nitty-gritty technical descriptions of how Gatsby works. Most useful when you need detailed information about Gatsby's APIs.",
-    color: "#BC027F",
-  },
-  {
-    text: "Conceptual Guides",
-    url: "https://www.gatsbyjs.com/docs/conceptual/",
-    description:
-      "Big-picture explanations of higher-level Gatsby concepts. Most useful for building understanding of a particular topic.",
-    color: "#0D96F2",
-  },
-  {
-    text: "Plugin Library",
-    url: "https://www.gatsbyjs.com/plugins",
-    description:
-      "Add functionality and customize your Gatsby site or app with thousands of plugins built by our amazing developer community.",
-    color: "#000000",
-  },
-]
+const pages = roles.map((role) => {
+  return ({ style }) => (
+    <animated.div style={{ ...style, width: "fit-content", height: 20 }}>
+      {role}
+    </animated.div>
+  );
+});
 
-// markup
+const titleButton = {
+  cursor: "pointer",
+  borderRadius: "50%",
+  backgroundColor: "white",
+  width: 30,
+  height: 30,
+  lineHeight: "30px",
+  color: "black",
+  fontWeight: 500,
+  fontSize: "2em",
+  border: "none",
+  outline: "none",
+  "&:hover": {
+    background: "blue",
+  },
+};
+
+const RoleCall = () => {
+  const [index, set] = React.useState(0);
+  const [selectedRole, setSelectedRole] = React.useState();
+
+  const nextTitle = () => {
+    set((state) => (state + 1) % 6);
+  };
+  const prevTitle = () => {
+    set((state) => (state - 1) % 6);
+  };
+
+  const transitions = useTransition(index, (p) => p, {
+    from: {
+      opacity: 0,
+      transform: "translate3d(100%,0,0)",
+      position: "absolute",
+    },
+    enter: { opacity: 1, transform: "translate3d(0,0,0)" },
+    leave: { opacity: 0, transform: "translate3d(-50%,0,0)" },
+  });
+
+  return (
+    <div style={{ display: "flex", flexDirection: "row" }}>
+      <button style={titleButton} onClick={prevTitle}>
+        ⮜
+      </button>
+      <div id={index} style={transMain}>
+        {transitions.map(({ item, props, key }) => {
+          const Page = pages[item];
+          return <Page key={key} style={props} />;
+        })}
+      </div>
+      <button style={titleButton} onClick={nextTitle}>
+        ⮞
+      </button>
+    </div>
+  );
+};
+
 const IndexPage = () => {
   return (
     <main style={pageStyles}>
-      <title>Home Page</title>
+      <title>Toenails' World</title>
       <h1 style={headingStyles}>
-        Congratulations
+        Hi, I'm <span style={{ color: palette.two }}>Joe</span>!
         <br />
-        <span style={headingAccentStyles}>— you just made a Gatsby site! </span>
-        <span role="img" aria-label="Party popper emojis">
-          🎉🎉🎉
-        </span>
+        Your friendly neighborhood:
       </h1>
-      <p style={paragraphStyles}>
-        Edit <code style={codeStyles}>src/pages/index.js</code> to see this page
-        update in real-time.{" "}
-        <span role="img" aria-label="Sunglasses smiley emoji">
-          😎
-        </span>
-      </p>
-      <ul style={listStyles}>
-        <li style={docLinkStyle}>
-          <a
-            style={linkStyle}
-            href={`${docLink.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-          >
-            {docLink.text}
-          </a>
-        </li>
-        {links.map(link => (
-          <li key={link.url} style={{ ...listItemStyles, color: link.color }}>
-            <span>
-              <a
-                style={linkStyle}
-                href={`${link.url}?utm_source=starter&utm_medium=start-page&utm_campaign=minimal-starter`}
-              >
-                {link.text}
-              </a>
-              <p style={descriptionStyle}>{link.description}</p>
-            </span>
-          </li>
-        ))}
-      </ul>
+      <RoleCall />
       <img
-        alt="Gatsby G Logo"
-        src="data:image/svg+xml,%3Csvg width='24' height='24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 2a10 10 0 110 20 10 10 0 010-20zm0 2c-3.73 0-6.86 2.55-7.75 6L14 19.75c3.45-.89 6-4.02 6-7.75h-5.25v1.5h3.45a6.37 6.37 0 01-3.89 4.44L6.06 9.69C7 7.31 9.3 5.63 12 5.63c2.13 0 4 1.04 5.18 2.65l1.23-1.06A7.959 7.959 0 0012 4zm-8 8a8 8 0 008 8c.04 0 .09 0-8-8z' fill='%23639'/%3E%3C/svg%3E"
+        src="../images/TonelliMugshot.jpg"
+        style={{ width: 300, height: 300, objectCover: "fit" }}
       />
     </main>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;
