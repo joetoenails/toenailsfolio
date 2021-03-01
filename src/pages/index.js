@@ -3,6 +3,7 @@ import styled, { keyframes } from "styled-components";
 import "@fontsource/shrikhand";
 import "@fontsource/cabin";
 import "@fontsource/fira-sans";
+import Me from "../images/TonelliMugshot.jpg";
 
 import { useTransition, animated } from "react-spring";
 
@@ -147,10 +148,15 @@ const IndexPage = () => {
       </h1>
       <RoleCall setSelectedRole={setSelectedRole} />
       <img
-        src="../images/TonelliMugshot.jpg"
-        style={{ width: 300, height: 300, objectCover: "fit" }}
+        src={Me}
+        style={{
+          width: 300,
+          height: 300,
+          objectFit: "cover",
+          objectPosition: "40%",
+          marginTop: "1em",
+        }}
       />
-      <p>{selectedRole}</p>
     </main>
   );
 };
