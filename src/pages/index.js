@@ -85,15 +85,25 @@ const titleButton = {
   },
 };
 
-const RoleCall = () => {
+const RoleCall = ({ setSelectedRole }) => {
   const [index, set] = React.useState(0);
-  const [selectedRole, setSelectedRole] = React.useState();
 
   const nextTitle = () => {
-    set((state) => (state + 1) % 6);
+    let newIdx = (index + 1) % 6;
+    set(newIdx);
+    setSelectedRole(roles[newIdx]);
   };
+
   const prevTitle = () => {
-    set((state) => (state - 1) % 6);
+    let newIdx = index;
+    if (newIdx === 0) {
+      set(5);
+      setSelectedRole(roles[5]);
+    } else {
+      newIdx = (index - 1) % 6;
+      set(newIdx);
+      setSelectedRole(roles[newIdx]);
+    }
   };
 
   const transitions = useTransition(index, (p) => p, {
@@ -125,6 +135,8 @@ const RoleCall = () => {
 };
 
 const IndexPage = () => {
+  const [selectedRole, setSelectedRole] = React.useState("developer");
+
   return (
     <main style={pageStyles}>
       <title>Toenails' World</title>
@@ -133,11 +145,12 @@ const IndexPage = () => {
         <br />
         Your friendly neighborhood:
       </h1>
-      <RoleCall />
+      <RoleCall setSelectedRole={setSelectedRole} />
       <img
         src="../images/TonelliMugshot.jpg"
         style={{ width: 300, height: 300, objectCover: "fit" }}
       />
+      <p>{selectedRole}</p>
     </main>
   );
 };
