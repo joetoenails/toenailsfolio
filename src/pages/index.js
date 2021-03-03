@@ -4,6 +4,8 @@ import "@fontsource/shrikhand";
 import "@fontsource/cabin";
 import "@fontsource/fira-sans";
 import Me from "../images/TonelliMugshot.jpg";
+import Navbar from "../components/navbar";
+import HomePageContent from "../components/HomePageContent";
 
 import { useTransition, animated } from "react-spring";
 
@@ -17,7 +19,11 @@ const palette = {
 // styles
 const pageStyles = {
   color: "#232129",
-  padding: "96px",
+  paddingLeft: "96px",
+  paddingRight: "96px",
+  paddingTop: "20px",
+  paddingBottom: "20px",
+  marginBottom: "50px",
   fontFamily: "-apple-system, Roboto, sans-serif, serif",
 };
 const headingStyles = {
@@ -42,7 +48,7 @@ const transMain = {
   flexDirection: "row",
   justifyContent: "center",
   alignContent: "center",
-  width: 250,
+  width: 245,
   height: 20,
   marginRight: "0%",
 
@@ -59,6 +65,15 @@ const roles = [
   "dungeon master",
   "project manager",
   "birdwatcher",
+];
+
+const photoRoles = [
+  null,
+  "https://bigtoeproductions.files.wordpress.com/2019/06/img_3308.jpeg?strip=info&w=1683",
+  null,
+  null,
+  null,
+  null,
 ];
 
 const pages = roles.map((role) => {
@@ -84,6 +99,7 @@ const titleButton = {
   "&:hover": {
     background: "blue",
   },
+  padding: 0,
 };
 
 const RoleCall = ({ setSelectedRole }) => {
@@ -140,23 +156,42 @@ const IndexPage = () => {
 
   return (
     <main style={pageStyles}>
-      <title>Toenails' World</title>
-      <h1 style={headingStyles}>
-        Hi, I'm <span style={{ color: palette.two }}>Joe</span>!
-        <br />
-        Your friendly neighborhood:
-      </h1>
-      <RoleCall setSelectedRole={setSelectedRole} />
-      <img
-        src={Me}
+      <div
         style={{
-          width: 300,
-          height: 300,
-          objectFit: "cover",
-          objectPosition: "40%",
-          marginTop: "1em",
+          display: "flex",
+          flexDirection: "row-reverse",
+          alignContent: "center",
+          width: "100%",
+          height: "50px",
         }}
-      />
+      >
+        <Navbar />
+      </div>
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <div>
+          <title>Toenails' World</title>
+          <h1 style={headingStyles}>
+            Hi, I'm <span style={{ color: palette.two }}>Joe</span>!
+            <br />
+            Your friendly neighborhood:
+          </h1>
+          <RoleCall setSelectedRole={setSelectedRole} />
+          <img
+            src={Me}
+            style={{
+              width: 300,
+              height: 300,
+              objectFit: "cover",
+              objectPosition: "40%",
+              marginTop: "1em",
+              borderRadius: "5px",
+            }}
+          />
+        </div>
+        <div style={{ marginLeft: "7%", width: "100%" }}>
+          <HomePageContent selectedRole={selectedRole} />
+        </div>
+      </div>
     </main>
   );
 };
