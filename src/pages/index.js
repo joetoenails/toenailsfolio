@@ -10,6 +10,7 @@ import Navbar from "../components/navbar";
 import HomePageContent from "../components/HomePageContent";
 
 import { useTransition, useSpring, animated } from "react-spring";
+import { Helmet } from "react-helmet";
 
 const palette = {
   one: "#7BA39A",
@@ -221,6 +222,9 @@ const IndexPage = () => {
 
   return (
     <main style={pageStyles}>
+      <Helmet>
+        <title>Meet JoeToenails</title>
+      </Helmet>
       <div
         style={{
           display: "flex",
