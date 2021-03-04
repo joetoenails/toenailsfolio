@@ -55,10 +55,22 @@ const HomePageContent = ({ selectedRole }) => {
     });
   }
   if (selectedRole === "project manager") {
-    return <ProjectManager />;
+    return transitions.map(({ item, props, key }) => {
+      return (
+        <animated.div key={key} style={props}>
+          <ProjectManager />
+        </animated.div>
+      );
+    });
   }
   if (selectedRole === "birdwatcher") {
-    return <Birdwatcher />;
+    return transitions.map(({ item, props, key }) => {
+      return (
+        <animated.div key={key} style={props}>
+          <Birdwatcher />
+        </animated.div>
+      );
+    });
   }
 };
 

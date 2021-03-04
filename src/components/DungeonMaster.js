@@ -38,7 +38,8 @@ const DungeonMaster = () => {
     <div style={{ width: "90%" }}>
       <h1 style={h1}>My Dungeons</h1>
       <p style={p}>
-        I'm a frequent D&D DM and player. I also love weird RPGs about rocks!{" "}
+        I'm a frequent D&D DM and player. I also love weird RPGs about rocks or
+        aliens or bears!{" "}
       </p>
 
       <div
