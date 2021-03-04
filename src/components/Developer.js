@@ -6,12 +6,6 @@ import "@fontsource/fira-sans";
 import "@fontsource/shrikhand";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-const fadeInAnimation = keyframes`${fadeIn}`;
-
-const FadeInDiv = styled.div`
-  animation: 1s ${fadeInAnimation};
-`;
-
 const h1 = {
   fontFamily: "cabin",
   marginTop: "1em",
@@ -130,12 +124,13 @@ const Developer = () => {
           alignContent: "space-evenly",
           marginBottom: "1em",
           flexWrap: "wrap",
-          width: "90%",
+          width: "100%",
         }}
       >
-        {techStack.map((tech) => {
+        {techStack.map((tech, index) => {
           return (
             <div
+              key={index}
               style={{
                 display: "flex",
                 flexDirection: "column",
@@ -170,7 +165,7 @@ const Developer = () => {
         style={{
           display: "flex",
           flexDirection: matches ? "row" : "column",
-          width: "80%",
+          width: "90%",
         }}
       >
         <a href="https://two-plus.web.app/userhome">
@@ -212,14 +207,14 @@ const Developer = () => {
         </div>
       </div>
       <hr
-        style={{ marginRight: "20%", marginBottom: "1em", marginTop: "1em" }}
+        style={{ marginRight: "10%", marginBottom: "1em", marginTop: "1em" }}
       />
       <div>
         <div
           style={{
             display: "flex",
             flexDirection: matches ? "row" : "column",
-            width: "80%",
+            width: "90%",
           }}
         >
           <a href="https://github.com/joetoenails/scavenger-hunt">
@@ -267,14 +262,14 @@ const Developer = () => {
         </div>
       </div>
       <hr
-        style={{ marginRight: "20%", marginBottom: "1em", marginTop: "1em" }}
+        style={{ marginRight: "10%", marginBottom: "1em", marginTop: "1em" }}
       />
       <div>
         <div
           style={{
             display: "flex",
             flexDirection: matches ? "row" : "column",
-            width: "80%",
+            width: "90%",
           }}
         >
           <a href="https://buyrealart.herokuapp.com/">

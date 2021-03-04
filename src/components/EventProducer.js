@@ -79,19 +79,21 @@ const deadspin = [
 ];
 
 const eventH1 = { fontFamily: "shrikhand", fontWeight: 100 };
-const eventH2 = { fontFamily: "cabin", fontWeight: 100 };
-const eventP = { fontFamily: "fira sans", fontSize: ".8em", marginTop: "5px" };
+const eventH2 = { fontFamily: "shrikhand", fontWeight: 100, fontSize: "1.5em" };
+const eventP = { fontFamily: "cabin", fontSize: ".9em", marginTop: "5px" };
 const EventProducer = () => {
   return (
     <div>
-      <div style={{ width: "80%" }}>
+      <div style={{ width: "90%" }}>
         <h1 style={{ ...eventH1, marginBottom: 0, marginTop: 0 }}>My Events</h1>
         <p style={{ fontFamily: "cabin", marginTop: 0 }}>
           I've been producing events personally and professionally for more than
-          5 years. They have always been a labor of love for me. I get the same
-          thrill each time event day roles around and I get the chance to show
-          all the guests what I and my team have worked so hard to build for
-          them.
+          5 years. They have always been a labor of love for me, and I get the
+          same thrill each time event day rolls around. My core belief is there
+          is nothing that’s “not my job.” I’ve booked travel, laid out marketing
+          materials, contracted vendors, and designed stages. And yet, I’ve also
+          greeted guests, plugged in extension cords, and folded up chairs.
+          Having my hands in every part of my events is essential.
         </p>
         <div>
           <hr />
@@ -99,8 +101,8 @@ const EventProducer = () => {
           <p style={eventP}>
             ToeJam is a local, independent, and charity-focused music festival
             that takes place in the Hudson Valley. Now in its 5th year, ToeJam
-            brings art, music, apples, camping, and love all together for a day
-            of unforgettable memories.
+            brings art, music, apples, camping, love (and sometimes kangaroos),
+            all together for a day of unforgettable memories.
           </p>
           <GridList cellHeight={150} cols={3}>
             {toejam.map((toe, index) => (

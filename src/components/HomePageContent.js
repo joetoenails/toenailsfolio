@@ -14,8 +14,8 @@ const HomePageContent = ({ selectedRole }) => {
       transform: "translate3d(100%,0,0)",
       position: "absolute",
     },
-    enter: { opacity: 1, transform: "translate3d(0,0,0)" },
-    leave: { opacity: 0, transform: "translate3d(-10%,0,0)" },
+    enter: { opacity: 1, transform: "translate3d(0%,0,0)" },
+    leave: { opacity: 0, transform: "translate3d(50%,0,0)" },
   });
 
   if (selectedRole === "developer") {
@@ -37,7 +37,13 @@ const HomePageContent = ({ selectedRole }) => {
     });
   }
   if (selectedRole === "marriage officiant") {
-    return <Marriage />;
+    return transitions.map(({ item, props, key }) => {
+      return (
+        <animated.div key={key} style={props}>
+          <Marriage />
+        </animated.div>
+      );
+    });
   }
   if (selectedRole === "dungeon master") {
     return <DungeonMaster />;

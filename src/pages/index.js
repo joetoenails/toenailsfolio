@@ -1,13 +1,13 @@
 import * as React from "react";
-import styled, { keyframes } from "styled-components";
 import "@fontsource/shrikhand";
 import "@fontsource/cabin";
 import "@fontsource/fira-sans";
 import Me from "../images/TonelliMugshot.jpg";
+import Bubble from "../images/Bubble.png";
 import Navbar from "../components/navbar";
 import HomePageContent from "../components/HomePageContent";
 
-import { useTransition, animated } from "react-spring";
+import { useTransition, useSpring, animated } from "react-spring";
 
 const palette = {
   one: "#7BA39A",
@@ -96,19 +96,17 @@ const titleButton = {
   fontSize: "2em",
   border: "none",
   outline: "none",
-  "&:hover": {
-    background: "blue",
-  },
   padding: 0,
 };
 
-const RoleCall = ({ setSelectedRole }) => {
+const RoleCall = ({ setSelectedRole, setSpeechBubble }) => {
   const [index, set] = React.useState(0);
 
   const nextTitle = () => {
     let newIdx = (index + 1) % 6;
     set(newIdx);
     setSelectedRole(roles[newIdx]);
+    setSpeechBubble(false);
   };
 
   const prevTitle = () => {
@@ -116,10 +114,12 @@ const RoleCall = ({ setSelectedRole }) => {
     if (newIdx === 0) {
       set(5);
       setSelectedRole(roles[5]);
+      setSpeechBubble(false);
     } else {
       newIdx = (index - 1) % 6;
       set(newIdx);
       setSelectedRole(roles[newIdx]);
+      setSpeechBubble(false);
     }
   };
 
@@ -138,21 +138,57 @@ const RoleCall = ({ setSelectedRole }) => {
       <button style={titleButton} onClick={prevTitle}>
         ⮜
       </button>
+
       <div id={index} style={transMain}>
         {transitions.map(({ item, props, key }) => {
           const Page = pages[item];
           return <Page key={key} style={props} />;
         })}
       </div>
-      <button style={titleButton} onClick={nextTitle}>
+      <FlashingButton nextTitle={nextTitle} />
+    </div>
+  );
+};
+
+const FlashingButton = ({ nextTitle }) => {
+  let toggle = true;
+  const [props, set, stop] = useSpring(() => ({
+    opacity: 1,
+    color: "black",
+  }));
+
+  React.useEffect(() => {
+    const flash = setInterval(() => {
+      toggle = !toggle;
+      set({
+        opacity: toggle ? 1 : 0,
+        color: toggle ? "blue" : "black",
+      });
+    }, 500);
+
+    setTimeout(() => {
+      clearInterval(flash);
+    }, 5000);
+  }, []);
+
+  return (
+    <animated.div style={props}>
+      <button onClick={nextTitle} style={titleButton}>
         ⮞
       </button>
-    </div>
+    </animated.div>
   );
 };
 
 const IndexPage = () => {
   const [selectedRole, setSelectedRole] = React.useState("developer");
+  const [speechBubble, setSpeechBubble] = React.useState(false);
+
+  React.useEffect(() => {
+    setTimeout(() => {
+      setSpeechBubble(true);
+    }, 8000);
+  }, []);
 
   return (
     <main style={pageStyles}>
@@ -170,23 +206,34 @@ const IndexPage = () => {
       <div style={{ display: "flex", flexDirection: "row" }}>
         <div>
           <title>Toenails' World</title>
-          <h1 style={headingStyles}>
+          <h1 style={{ ...headingStyles, marginBottom: ".5em" }}>
             Hi, I'm <span style={{ color: palette.two }}>Joe</span>!
             <br />
             Your friendly neighborhood:
           </h1>
-          <RoleCall setSelectedRole={setSelectedRole} />
+          <RoleCall
+            setSelectedRole={setSelectedRole}
+            setSpeechBubble={setSpeechBubble}
+          />
           <img
             src={Me}
+            alt="It's me, JoeToenails"
             style={{
               width: 300,
               height: 300,
               objectFit: "cover",
               objectPosition: "40%",
+              position: "absolute",
               marginTop: "1em",
               borderRadius: "5px",
             }}
           />
+          {speechBubble && (
+            <img
+              src={Bubble}
+              style={{ position: "absolute", width: 190, left: 300, top: 320 }}
+            />
+          )}
         </div>
         <div style={{ marginLeft: "7%", width: "100%" }}>
           <HomePageContent selectedRole={selectedRole} />
