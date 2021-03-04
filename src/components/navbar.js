@@ -7,9 +7,9 @@ import "@fontsource/fira-sans";
 const linkstyle = {
   fontFamily: "cabin",
   textDecoration: "underline",
-  fontWeight: 600,
+  fontWeight: 200,
   fontSize: "1.3em",
-  color: "black",
+  color: "#525563",
   marginLeft: "1em",
   marginRight: "1em",
   cursor: "pointer",

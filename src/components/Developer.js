@@ -104,7 +104,12 @@ const Developer = () => {
   const matches = useMediaQuery("(min-width:1100px)");
 
   return (
-    <div>
+    <div
+      style={{
+        borderRadius: "5px",
+        width: "90%",
+      }}
+    >
       <h1
         style={{
           fontFamily: "shrikhand",
@@ -133,7 +138,7 @@ const Developer = () => {
                 display: "flex",
                 flexDirection: "column",
                 justifyContent: "center",
-                marginRight: "2em",
+                marginRight: "1.5em",
                 marginBottom: "1em",
                 width: 100,
               }}

@@ -3,6 +3,8 @@ import "@fontsource/shrikhand";
 import "@fontsource/cabin";
 import "@fontsource/fira-sans";
 import Me from "../images/TonelliMugshot.jpg";
+import leftArrow from "../images/leftArrow.svg";
+import rightArrow from "../images/rightArrow.svg";
 import Bubble from "../images/Bubble.png";
 import Navbar from "../components/navbar";
 import HomePageContent from "../components/HomePageContent";
@@ -70,7 +72,20 @@ const photoRoles = [
 
 const pages = roles.map((role) => {
   return ({ style }) => (
-    <animated.div style={{ ...style, width: "fit-content", height: 20 }}>
+    <animated.div
+      style={{
+        ...style,
+        width: "fit-content",
+        height: 20,
+        fontFamily: "shrikhand",
+        fontWeight: 100,
+        fontSize: "1.1em",
+        color: palette.three,
+        marginLeft: "1em",
+        marginRight: "1em",
+        paddingTop: ".1 em",
+      }}
+    >
       {role}
     </animated.div>
   );
@@ -127,9 +142,9 @@ const RoleCall = ({ setSelectedRole, setSpeechBubble }) => {
 
   return (
     <div style={{ display: "flex", flexDirection: "row" }}>
-      <button style={titleButton} onClick={prevTitle}>
-        ⮜
-      </button>
+      <div style={{ marginRight: "1em" }} onClick={prevTitle}>
+        <img style={{ width: 40, cursor: "pointer" }} src={leftArrow} />
+      </div>
 
       <div id={index} style={transMain}>
         {transitions.map(({ item, props, key }) => {
@@ -165,9 +180,9 @@ const FlashingButton = ({ nextTitle }) => {
 
   return (
     <animated.div style={props}>
-      <button onClick={nextTitle} style={titleButton}>
-        ⮞
-      </button>
+      <div style={{ marginLeft: "1em" }} onClick={nextTitle}>
+        <img style={{ width: 40, cursor: "pointer" }} src={rightArrow} />
+      </div>
     </animated.div>
   );
 };
@@ -188,7 +203,7 @@ const SpeechBubble = ({ speechBubble }) => {
       <img
         alt="bubble"
         src={Bubble}
-        style={{ position: "absolute", width: 190, left: 300, top: 320 }}
+        style={{ position: "absolute", width: 190, left: 325, top: 335 }}
       />
     </animated.div>
   );
@@ -219,7 +234,13 @@ const IndexPage = () => {
       </div>
       <div style={{ display: "flex", flexDirection: "row" }}>
         <div>
-          <h1 style={{ ...headingStyles, marginBottom: ".5em" }}>
+          <h1
+            style={{
+              ...headingStyles,
+              marginBottom: ".5em",
+              marginLeft: ".5em",
+            }}
+          >
             Hi, I'm <span style={{ color: palette.two }}>Joe</span>!
             <br />
             Your friendly neighborhood:
@@ -238,6 +259,7 @@ const IndexPage = () => {
               objectPosition: "40%",
               position: "absolute",
               marginTop: "1em",
+              marginLeft: "1.7em",
               borderRadius: "5px",
             }}
           />

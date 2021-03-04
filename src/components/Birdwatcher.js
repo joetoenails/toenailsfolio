@@ -59,7 +59,7 @@ const Birdwatcher = () => {
               objectFit: "cover",
               borderRadius: "5px",
             }}
-            src="https://lh3.googleusercontent.com/QEpXgqbZpSy5RSnPk725d5jD7CKVvpONSu1WN2rPdYI7Zx07OIyGWnlKQTWexSoqJWYKgQwLKoe3JT1zy5vVFgNDyHZq3jpdtkv6IveSnC7CZ6bLHdWy8LUnt-_ThVI6lFRGNfN6PRqFpNRsSYJSm0alJ16XjQIqvRl4qGM9HnAsE3zP7xeea28tRVLgAmW6N1pDYrIupS0f3KsbECcUlPkESyMhZmkHENlxn0-KaqgF1n2Qik9AG1DdfL9uIr4frEctdGLfHLO_qVO8xtpsEGDqSzPdcHsQvEsnX7sQMJDKR1XKmnDU29TOZRD4da78iXRGBWPlEEecz74Krw504rCqWFA6EOjTbv6Z4BkDQKBvw432iGT-maGusPqIeQDCZYHOLVzSW4KlZhlWledRxAXX_ie1vpMtvFBHyBhZr7cabwMcymVwhgUf7viBfhWF1E6VU1-K6yBZJJ_dHFsSNBDbSJR7XjQMMb_AeI5BG0k9lYV5o4x3eqtccJ50PbRdmPGrpMQqxJIocnE1cGug2WLZfUeppagBKrx8QVlPq8U5OV_2YcEIuYBArwAexKLZAlkAHCBZGM5MQ6tuF72woCsPq2gL3yLrql0umNuGj-WAaT66D51L-0xZXPR23IdG6hQSNyJZRMtPKaMgwhaUaAaKUW4o2fiy0KUiobm9rSqaFaJZLjmRWnv6YHM99cU=w776-h1035-no?authuser=0"
+            src="https://i.imgur.com/8ViByPW.jpg"
           />
         </div>
       </div>

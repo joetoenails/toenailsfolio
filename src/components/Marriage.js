@@ -20,13 +20,13 @@ const Marriage = () => {
       <p style={p}>
         I'm a licensed Marriage Officiant in the state of New York through the
         Universal Life Church. I've only performed one marriage thus far (for
-        two of my best friends). But I'd say it was a success. Tear production
+        two of my best friends), but I'd say it was a success. Tear production
         at Tonelli-officiated marriages is anecdotally 27% higher than at other
-        weddings. If you'd like to book me for your wedding, send a short email
-        with a description of yourself and your partner, and I'll set up a free
-        consultation. Services include custom vow composition, marriage
-        certificate delivery, and at least 3 meetings with the couple to make
-        build an entirely unique service.
+        non-Tonelli-officiated weddings. If you'd like to book me for your
+        wedding, send a short email with a description of yourself and your
+        partner, and I'll set up a free consultation. Services include custom
+        vow composition, marriage certificate delivery, and at least 3 meetings
+        with the couple to create an entirely unique service.
       </p>
       <hr style={{ marginBottom: "1em" }} />
 
