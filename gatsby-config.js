@@ -7,7 +7,6 @@ module.exports = {
     "gatsby-plugin-styled-components",
     `gatsby-plugin-image`,
     "gatsby-plugin-sharp",
-    "gatsby-plugin-react-helmet",
     "gatsby-transformer-sharp",
 
     {
@@ -21,11 +20,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `ToenailsFolio`,
-        short_name: `ToenailsFolio`,
+        name: `GatsbyJS`,
+        short_name: `GatsbyJS`,
         start_url: `/`,
         display: `standalone`,
-        icon:`src/images/icon.png`
+        icon: `src/images/icon.png`,
       },
+    },
   ],
 };
