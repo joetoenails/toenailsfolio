@@ -46,7 +46,13 @@ const HomePageContent = ({ selectedRole }) => {
     });
   }
   if (selectedRole === "dungeon master") {
-    return <DungeonMaster />;
+    return transitions.map(({ item, props, key }) => {
+      return (
+        <animated.div key={key} style={props}>
+          <DungeonMaster />
+        </animated.div>
+      );
+    });
   }
   if (selectedRole === "project manager") {
     return <ProjectManager />;

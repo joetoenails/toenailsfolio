@@ -34,14 +34,6 @@ const headingStyles = {
   letterSpacing: "1.2px",
   fontSize: "2.5em",
 };
-const heading2 = {
-  color: palette.two,
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 500,
-  fontFamily: "shrikhand",
-  letterSpacing: "1px",
-};
 
 const transMain = {
   display: "flex",
@@ -230,6 +222,7 @@ const IndexPage = () => {
           />
           {speechBubble && (
             <img
+              alt="bubble"
               src={Bubble}
               style={{ position: "absolute", width: 190, left: 300, top: 320 }}
             />

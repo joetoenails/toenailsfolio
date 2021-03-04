@@ -3,6 +3,7 @@ import "@fontsource/cabin";
 import "@fontsource/fira-sans";
 import "@fontsource/shrikhand";
 import Certif from "../images/Certif.png";
+import { StaticImage } from "gatsby-plugin-image";
 
 const h1 = {
   fontFamily: "shrikhand",
@@ -29,12 +30,17 @@ const Marriage = () => {
       </p>
       <hr style={{ marginBottom: "1em" }} />
 
-      <img style={{ width: 500, borderRadius: "5px" }} src={Certif} />
+      <StaticImage
+        alt="certif"
+        style={{ width: 425, borderRadius: "5px" }}
+        src={"../images/Certif.png"}
+      />
       <img
+        alt="marriage"
         style={{
           marginLeft: "1em",
-          width: 500,
-          height: 403,
+          width: 425,
+          height: 343,
           objectFit: "cover",
           borderRadius: "5px",
         }}

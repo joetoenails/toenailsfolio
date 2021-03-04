@@ -1,16 +1,9 @@
 import * as React from "react";
-import styled, { keyframes } from "styled-components";
-import { fadeIn } from "react-animations";
+
 import "@fontsource/cabin";
 import "@fontsource/fira-sans";
 import "@fontsource/shrikhand";
 import { GridList, GridListTile } from "@material-ui/core";
-
-const fadeInAnimation = keyframes`${fadeIn}`;
-
-const FadeInDiv = styled.div`
-  animation: 1s ${fadeInAnimation};
-`;
 
 const toejam = [
   {
@@ -107,14 +100,14 @@ const EventProducer = () => {
           <GridList cellHeight={150} cols={3}>
             {toejam.map((toe, index) => (
               <GridListTile key={index} cols={toe.col}>
-                <img src={toe.img} />
+                <img alt={index} src={toe.img} />
               </GridListTile>
             ))}
           </GridList>
         </div>
         <div>
           <hr style={{ marginTop: "1em" }} />
-          <h1 style={{ ...eventH2, marginBottom: 0 }}>The RSX-Cade</h1>
+          <h1 style={{ ...eventH2, marginBottom: 0 }}>The RSX-CADE</h1>
           <p style={eventP}>
             The RS-XCADE invited guests to a fashion-forward yet retro-inspired
             indie arcade and sneaker release party in NYC. Custom art
@@ -125,7 +118,7 @@ const EventProducer = () => {
           <GridList cellHeight={150} cols={3}>
             {rsx.map((pic, index) => (
               <GridListTile key={index} cols={1}>
-                <img src={pic} />
+                <img alt={index} src={pic} />
               </GridListTile>
             ))}
           </GridList>
@@ -145,7 +138,7 @@ const EventProducer = () => {
           <GridList cellHeight={150} cols={3}>
             {lemans.map((pic, index) => (
               <GridListTile key={index} cols={1}>
-                <img src={pic} />
+                <img alt={index} src={pic} />
               </GridListTile>
             ))}
           </GridList>
@@ -163,7 +156,7 @@ const EventProducer = () => {
           <GridList cellHeight={150} cols={3}>
             {deadspin.map((pic, index) => (
               <GridListTile key={index} cols={1}>
-                <img src={pic} />
+                <img alt={index} src={pic} />
               </GridListTile>
             ))}
           </GridList>

@@ -1,12 +1,14 @@
 module.exports = {
   siteMetadata: {
-    title: "ToenailsFolio",
+    title: "JoeToenails Says Hello",
   },
   plugins: [
     "gatsby-plugin-styled-components",
+    `gatsby-plugin-image`,
     "gatsby-plugin-sharp",
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-sharp",
+
     {
       resolve: "gatsby-source-filesystem",
       options: {

@@ -1,6 +1,4 @@
 import * as React from "react";
-import styled, { keyframes } from "styled-components";
-import { fadeIn } from "react-animations";
 import "@fontsource/cabin";
 import "@fontsource/fira-sans";
 import "@fontsource/shrikhand";
@@ -142,6 +140,7 @@ const Developer = () => {
             >
               <div style={{ alignSelf: "center" }}>
                 <img
+                  alt={tech.name}
                   style={{
                     width: "30px",
                     height: "30px",
@@ -170,6 +169,7 @@ const Developer = () => {
       >
         <a href="https://two-plus.web.app/userhome">
           <img
+            alt="two plus"
             style={{
               width: 500,
               height: 300,
@@ -219,6 +219,7 @@ const Developer = () => {
         >
           <a href="https://github.com/joetoenails/scavenger-hunt">
             <img
+              alt="scavenger hunt"
               style={{
                 width: 500,
                 height: 300,
@@ -274,6 +275,7 @@ const Developer = () => {
         >
           <a href="https://buyrealart.herokuapp.com/">
             <img
+              alt="buy real art"
               style={{
                 width: 500,
                 height: 300,
