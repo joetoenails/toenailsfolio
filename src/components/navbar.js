@@ -12,19 +12,33 @@ const linkstyle = {
   color: "black",
   marginLeft: "1em",
   marginRight: "1em",
+  cursor: "pointer",
+  target: "_blank",
 };
 
 const Navbar = () => {
   return (
     <div>
+      <a style={linkstyle} href="mailto:joe.d.tonelli@gmail.com">
+        Contact
+      </a>
+
+      <a
+        target="_blank"
+        style={linkstyle}
+        href="https://www.linkedin.com/in/joetoenails/"
+      >
+        LinkedIn
+      </a>
+      <a
+        target="_blank"
+        style={linkstyle}
+        href="https://github.com/joetoenails"
+      >
+        Github
+      </a>
       <Link style={linkstyle} to="/resume">
         Resume
-      </Link>
-      <Link style={linkstyle} to="https://github.com/joetoenails">
-        Github
-      </Link>
-      <Link style={linkstyle} to="https://www.linkedin.com/in/joetoenails/">
-        LinkedIn
       </Link>
     </div>
   );

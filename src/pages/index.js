@@ -172,6 +172,28 @@ const FlashingButton = ({ nextTitle }) => {
   );
 };
 
+const SpeechBubble = ({ speechBubble }) => {
+  const [props, set, stop] = useSpring(() => ({
+    opacity: 0,
+  }));
+
+  if (speechBubble) {
+    set({ opacity: 1 });
+  }
+  if (!speechBubble) {
+    set({ opacity: 0 });
+  }
+  return (
+    <animated.div style={props}>
+      <img
+        alt="bubble"
+        src={Bubble}
+        style={{ position: "absolute", width: 190, left: 300, top: 320 }}
+      />
+    </animated.div>
+  );
+};
+
 const IndexPage = () => {
   const [selectedRole, setSelectedRole] = React.useState("developer");
   const [speechBubble, setSpeechBubble] = React.useState(false);
@@ -197,7 +219,6 @@ const IndexPage = () => {
       </div>
       <div style={{ display: "flex", flexDirection: "row" }}>
         <div>
-          <title>Toenails' World</title>
           <h1 style={{ ...headingStyles, marginBottom: ".5em" }}>
             Hi, I'm <span style={{ color: palette.two }}>Joe</span>!
             <br />
@@ -220,14 +241,9 @@ const IndexPage = () => {
               borderRadius: "5px",
             }}
           />
-          {speechBubble && (
-            <img
-              alt="bubble"
-              src={Bubble}
-              style={{ position: "absolute", width: 190, left: 300, top: 320 }}
-            />
-          )}
+          <SpeechBubble speechBubble={speechBubble} />
         </div>
+
         <div style={{ marginLeft: "7%", width: "100%" }}>
           <HomePageContent selectedRole={selectedRole} />
         </div>

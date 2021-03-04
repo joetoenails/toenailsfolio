@@ -46,7 +46,7 @@ const DungeonMaster = () => {
         style={{
           display: "flex",
           flexDirection: "row",
-          marginTop: "2em",
+          marginTop: "1.5em",
         }}
       >
         <img
@@ -108,8 +108,10 @@ const DungeonMaster = () => {
           </p>
         </div>
       </div>
-      <hr style={{ marginTop: "2em" }} />
-      <h1 style={{ ...h1, marginBottom: 0 }}>My Characters</h1>
+
+      <h1 style={{ ...h1, marginBottom: 0, marginTop: ".5em" }}>
+        My Characters
+      </h1>
       <p style={{ ...p, marginTop: 0 }}>
         Who I'm currently playing in my other campaigns
       </p>
@@ -130,7 +132,9 @@ const DungeonMaster = () => {
                 style={{ width: 100, marginBottom: ".3em" }}
                 src={char.image}
               />
-              <h4 style={{ ...h1, textAlign: "center" }}>{char.name}</h4>
+              <h4 style={{ ...h1, textAlign: "center", color: "#029676" }}>
+                {char.name}
+              </h4>
               <p style={{ ...p, textAlign: "center" }}>{char.description}</p>
             </div>
           );

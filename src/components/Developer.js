@@ -30,7 +30,7 @@ const techStack = [
     name: "PostgreSQL",
     icon: "https://icon-library.com/images/postgres-icon/postgres-icon-7.jpg",
   },
-  { name: "Firebase", icon: "https://image.pngaaa.com/432/3425432-middle.png" },
+  { name: "Firebase", icon: "https://i.imgur.com/4R5umfV.png" },
   {
     name: "React",
     icon: "https://cdn.auth0.com/blog/react-js/react.png",
@@ -188,8 +188,9 @@ const Developer = () => {
         >
           <h2 style={{ ...h1, marginBottom: 0, paddingLeft: "24px" }}>
             <a
+              target="_blank"
               style={{
-                color: "black",
+                color: "#029676",
                 textDecoration: "underline",
               }}
               href="https://two-plus.web.app/userhome"
@@ -238,26 +239,26 @@ const Developer = () => {
           >
             <h2 style={{ ...h1, marginBottom: 0, paddingLeft: "24px" }}>
               <a
+                target="_blank"
                 style={{
-                  color: "black",
+                  color: "#029676",
                   textDecoration: "underline",
                 }}
                 href="https://github.com/joetoenails/scavenger-hunt"
               >
-                The Magic Webcam Scavenger Hunt
+                The ML Webcam Scavenger Hunt
               </a>
             </h2>
             <p
               style={{ ...p, textAlign: "left", marginTop: 0, marginBottom: 0 }}
             >
               A machine-learning scavenger hunt that challenges you and a
-              partner to find 1 of 4 random items in your home. Machine learning
-              allows your webcam to recognize common household items like coffee
-              mugs, corkscrews, envelopes, flowerpots, and more. The first
-              player to hold the correct item up to the webcam wins! This game
-              is meant to be a simple proof of concept for a type of mini-game
-              that could be integrated into a video chat client like Zoom. Built
-              with WebRTC, React, and Socket.io.
+              partner to be the first to find random items in your home. Machine
+              learning allows your webcam to recognize common household items
+              like coffee mugs, corkscrews, envelopes, flowerpots, and more.
+              Meant to be a simple proof of concept for a type of mini-game that
+              could be integrated into a video chat client like Zoom. Built with
+              WebRTC, React, and Socket.io.
             </p>
           </div>
         </div>
@@ -294,8 +295,9 @@ const Developer = () => {
           >
             <h2 style={{ ...h1, marginBottom: 0, paddingLeft: "1em" }}>
               <a
+                target="_blank"
                 style={{
-                  color: "black",
+                  color: "#029676",
                   textDecoration: "underline",
                 }}
                 href="http://buyrealart.herokuapp.com/"

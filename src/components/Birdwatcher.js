@@ -66,7 +66,8 @@ const Birdwatcher = () => {
       <h2
         style={{ fontFamily: "cabin", textAlign: "center", marginTop: "1.5em" }}
       >
-        Total Unique Birds Seen To Date: 150
+        Total Unique Birds Seen To Date:{" "}
+        <span style={{ color: "#029676" }}>138</span>
       </h2>
     </div>
   );
