@@ -169,7 +169,7 @@ const Developer = () => {
         style={{
           display: "flex",
           flexDirection: matches ? "row" : "column",
-          width: "90%",
+          width: "100%",
         }}
       >
         <a href="https://two-plus.web.app/userhome">
@@ -220,7 +220,7 @@ const Developer = () => {
           style={{
             display: "flex",
             flexDirection: matches ? "row" : "column",
-            width: "90%",
+            width: "100%",
           }}
         >
           <a href="https://github.com/joetoenails/scavenger-hunt">
@@ -276,7 +276,7 @@ const Developer = () => {
           style={{
             display: "flex",
             flexDirection: matches ? "row" : "column",
-            width: "90%",
+            width: "100%",
           }}
         >
           <a href="https://buyrealart.herokuapp.com/">
