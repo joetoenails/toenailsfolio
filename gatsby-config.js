@@ -2,6 +2,7 @@ module.exports = {
   siteMetadata: {
     title: "JoeToenails Says Hello",
   },
+  pathPrefix: "/toenailsfolio",
   plugins: [
     "gatsby-plugin-styled-components",
     `gatsby-plugin-image`,
