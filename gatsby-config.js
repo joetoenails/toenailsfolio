@@ -18,5 +18,14 @@ module.exports = {
       },
       __key: "images",
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `ToenailsFolio`,
+        short_name: `ToenailsFolio`,
+        start_url: `/`,
+        display: `standalone`,
+        icon:`src/images/icon.png`
+      },
   ],
 };

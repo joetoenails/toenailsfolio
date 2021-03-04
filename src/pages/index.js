@@ -203,7 +203,7 @@ const SpeechBubble = ({ speechBubble }) => {
       <img
         alt="bubble"
         src={Bubble}
-        style={{ position: "absolute", width: 190, left: 325, top: 335 }}
+        style={{ position: "absolute", width: 190, left: 325, top: 350 }}
       />
     </animated.div>
   );
@@ -258,7 +258,7 @@ const IndexPage = () => {
               objectFit: "cover",
               objectPosition: "40%",
               position: "absolute",
-              marginTop: "1em",
+              marginTop: "1.7em",
               marginLeft: "1.7em",
               borderRadius: "5px",
             }}
