@@ -81,7 +81,7 @@ const EventProducer = () => {
         <h1 style={{ ...eventH1, marginBottom: 0, marginTop: 0 }}>My Events</h1>
         <p style={{ fontFamily: "cabin", marginTop: 0 }}>
           I've been producing events personally and professionally for more than
-          5 years. They have always been a labor of love for me, and I get that
+          5 years. They have always been a labor of love for me, and I get tha
           same thrill each time event day rolls around. My core belief is there
           is nothing that’s “not my job.” I’ve booked travel, laid out marketing
           materials, contracted vendors, and designed stages. And yet, I’ve also
