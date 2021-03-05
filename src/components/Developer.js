@@ -14,6 +14,7 @@ const p = {
   textAlign: "center",
   padding: "24px",
   paddingBottom: "1em",
+  fontSize: ".8em",
 };
 
 const techStack = [

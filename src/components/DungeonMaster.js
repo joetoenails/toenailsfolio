@@ -47,6 +47,7 @@ const DungeonMaster = () => {
           display: "flex",
           flexDirection: "row",
           marginTop: "1.5em",
+          width: "90%",
         }}
       >
         <img
@@ -79,6 +80,7 @@ const DungeonMaster = () => {
           display: "flex",
           flexDirection: "row",
           marginTop: ".5em",
+          width: "90%",
         }}
       >
         <img
@@ -115,7 +117,7 @@ const DungeonMaster = () => {
       <p style={{ ...p, marginTop: 0 }}>
         Who I'm currently playing in my other campaigns
       </p>
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      <div style={{ display: "flex", flexDirection: "row", width: "90%" }}>
         {chars.map((char) => {
           return (
             <div

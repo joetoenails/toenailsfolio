@@ -32,7 +32,11 @@ const Marriage = () => {
 
       <StaticImage
         alt="certif"
-        style={{ width: "45%", borderRadius: "5px" }}
+        style={{
+          width: "45%",
+          borderRadius: "5px",
+          height: 300,
+        }}
         src={"../images/Certif.png"}
       />
       <img
@@ -40,7 +44,7 @@ const Marriage = () => {
         style={{
           marginLeft: "1em",
           width: "45%",
-          height: 320,
+          height: 300,
           objectFit: "cover",
           borderRadius: "5px",
         }}
