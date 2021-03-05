@@ -27,7 +27,8 @@ const techStack = [
   },
   {
     name: "Trello",
-    icon: "http://assets.stickpng.com/images/58482beecef1014c0b5e4a36.png",
+    icon:
+      "https://netstorage.ringcentral.com/dpw/apps/BsxqZkBRQaWJ414y5EQOUg/0f760275-f987-4233-ad1d-f8358b63cb4a.png",
   },
   {
     name: "Sprout Social",
