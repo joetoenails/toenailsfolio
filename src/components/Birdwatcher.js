@@ -16,8 +16,8 @@ const Birdwatcher = () => {
     <div style={{ width: "95%" }}>
       <h1 style={h1}>My Birds</h1>
       <p style={p}>
-        When not working or DMing, I can often be found at the beach or in the
-        woods looking for birds. It's nice to get away :)
+        When not staring at a screen, I can often be found at the beach or in
+        the woods looking for birds. It's nice to get away :)
       </p>
       <hr />
       <div
