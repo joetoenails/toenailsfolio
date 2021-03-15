@@ -67,7 +67,7 @@ const Birdwatcher = () => {
         style={{ fontFamily: "cabin", textAlign: "center", marginTop: "1.5em" }}
       >
         Total Unique Birds Seen To Date:{" "}
-        <span style={{ color: "#029676" }}>138</span>
+        <span style={{ color: "#029676" }}>140</span>
       </h2>
     </div>
   );

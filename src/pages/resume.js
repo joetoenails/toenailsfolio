@@ -96,7 +96,7 @@ const Resume = () => {
               fontWeight: 100,
             }}
           >
-            joe.d.tonelli@email.com
+            joe.d.tonelli@gmail.com
           </h3>
           <h3 style={{ fontFamily: "cabin", marginTop: 0, fontWeight: 100 }}>
             845-242-0456
