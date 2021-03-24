@@ -38,6 +38,7 @@ const Birdwatcher = () => {
             American Oystercatcher - just look at that beak!
           </p>
           <img
+            alt="oystercatcher"
             style={{
               width: 350,
               height: 350,
@@ -53,6 +54,7 @@ const Birdwatcher = () => {
             Forster's Tern - seems like he's seen some shit.
           </p>
           <img
+            alt="tern"
             style={{
               width: 350,
               height: 350,

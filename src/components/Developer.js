@@ -14,7 +14,7 @@ const p = {
   textAlign: "center",
   padding: "24px",
   paddingBottom: "1em",
-  fontSize: ".8em",
+  fontSize: "1em",
 };
 
 const techStack = [
@@ -116,11 +116,27 @@ const Developer = () => {
           fontFamily: "shrikhand",
           fontWeight: 100,
           marginTop: 0,
-          marginBottom: ".5em",
+          marginBottom: ".2em",
         }}
       >
         My Skills
       </h1>
+      <p
+        style={{
+          ...p,
+          marginTop: 0,
+          paddingTop: 0,
+          paddingLeft: 0,
+          textAlign: "left",
+        }}
+      >
+        I'm a team-oriented and product-minded developer with a love for
+        building collaborative and interactive apps. I use each project as a
+        chance to learn new technology, improve my skills, and better my code
+        clarity. I always endeavor to motivate my peers, lead with optimism, and
+        build long-lasting relationships. We can go further together, so let's
+        pair program!
+      </p>
       <div
         style={{
           display: "flex",
@@ -181,7 +197,7 @@ const Developer = () => {
               height: 300,
               objectFit: "cover",
               boxShadow: "2px 2px 7px 0px #ababab",
-              borderRadius: "5px",
+              borderRadius: "10px",
             }}
             src="https://github.com/MasterCodersInc/TwoPlus/raw/main/src/assets/user-homepage.png"
           />
@@ -232,7 +248,7 @@ const Developer = () => {
                 height: 300,
                 objectFit: "cover",
                 boxShadow: "2px 2px 7px 0px #ababab",
-                borderRadius: "5px",
+                borderRadius: "10px",
               }}
               src="https://camo.githubusercontent.com/48cf3bd0ae4900c1622f81f63938344a978d1bdc6f489b074ccf21a19e184ebc/68747470733a2f2f692e696d6775722e636f6d2f647867416551382e6a7067"
             />
@@ -288,7 +304,7 @@ const Developer = () => {
                 height: 300,
                 objectFit: "cover",
                 boxShadow: "2px 2px 7px 0px #ababab",
-                borderRadius: "5px",
+                borderRadius: "10px",
               }}
               src="https://i.imgur.com/oZCE0dv.jpg"
             />
