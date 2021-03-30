@@ -103,6 +103,7 @@ const techStack = [
 
 const Developer = () => {
   const matches = useMediaQuery("(min-width:1100px)");
+  const matchesMed = useMediaQuery("(max-width:900px)");
 
   return (
     <div
@@ -128,6 +129,7 @@ const Developer = () => {
           paddingTop: 0,
           paddingLeft: 0,
           textAlign: "left",
+          width: matchesMed ? "100%" : "75%",
         }}
       >
         I'm a team-oriented and product-minded developer with a love for

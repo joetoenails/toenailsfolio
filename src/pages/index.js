@@ -8,6 +8,7 @@ import rightArrow from "../images/rightArrow.svg";
 import Bubble from "../images/Bubble.png";
 import Navbar from "../components/navbar";
 import HomePageContent from "../components/HomePageContent";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import { useTransition, useSpring, animated } from "react-spring";
 import { Helmet } from "react-helmet";
@@ -176,6 +177,7 @@ const FlashingButton = ({ nextTitle }) => {
 
     setTimeout(() => {
       clearInterval(flash);
+      set({ opacity: 1 });
     }, 5000);
   }, []);
 
@@ -213,6 +215,7 @@ const SpeechBubble = ({ speechBubble }) => {
 const IndexPage = () => {
   const [selectedRole, setSelectedRole] = React.useState("developer");
   const [speechBubble, setSpeechBubble] = React.useState(false);
+  const matches = useMediaQuery("(min-width:700px)");
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -236,7 +239,9 @@ const IndexPage = () => {
       >
         <Navbar />
       </div>
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      <div
+        style={{ display: "flex", flexDirection: matches ? "row" : "column" }}
+      >
         <div>
           <h1
             style={{
@@ -270,7 +275,13 @@ const IndexPage = () => {
           <SpeechBubble speechBubble={speechBubble} />
         </div>
 
-        <div style={{ marginLeft: "7%", width: "100%" }}>
+        <div
+          style={{
+            marginLeft: "7%",
+            width: "100%",
+            marginBottom: matches ? "20em" : "20em",
+          }}
+        >
           <HomePageContent selectedRole={selectedRole} />
         </div>
       </div>
