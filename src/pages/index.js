@@ -9,6 +9,7 @@ import rightArrow from "../images/rightArrow.svg";
 import Bubble from "../images/Bubble.png";
 import Navbar from "../components/navbar";
 import HomePageContent from "../components/HomePageContent";
+import MobileRoleCall from "../components/MobileRoleCall";
 
 import { useTransition, useSpring, animated } from "react-spring";
 import { Helmet } from "react-helmet";
@@ -86,7 +87,6 @@ const pages = roles.map((role) => {
     <animated.div
       style={{
         ...style,
-        width: "fit-content",
         height: 20,
         fontFamily: "shrikhand",
         fontWeight: 100,
@@ -94,7 +94,7 @@ const pages = roles.map((role) => {
         color: palette.three,
         marginLeft: "1em",
         marginRight: "1em",
-        paddingTop: ".1 em",
+        paddingTop: ".1em",
       }}
     >
       {role}
@@ -118,8 +118,6 @@ const titleButton = {
 };
 
 const RoleCall = ({ setSelectedRole, setSpeechBubble }) => {
-  const matches = useMediaQuery("(min-width:700px)");
-
   const [index, set] = React.useState(0);
 
   const nextTitle = () => {
@@ -166,12 +164,7 @@ const RoleCall = ({ setSelectedRole, setSpeechBubble }) => {
         })}
       </div>
 
-      <div
-        style={{ marginRight: "1em", cursor: "pointer" }}
-        onClick={nextTitle}
-      >
-        <img style={{ width: 40, cursor: "pointer" }} src={rightArrow} />
-      </div>
+      <FlashingButton nextTitle={nextTitle} />
     </div>
   );
 };
@@ -239,6 +232,7 @@ const IndexPage = () => {
   const [selectedRole, setSelectedRole] = React.useState("developer");
   const [speechBubble, setSpeechBubble] = React.useState(false);
   const matches = useMediaQuery("(min-width:700px)");
+  const device = useMediaQuery("(max-device-width: 480px)");
 
   React.useEffect(() => {
     setTimeout(() => {
@@ -250,6 +244,10 @@ const IndexPage = () => {
     <main style={matches ? pageStyles : mobileStyles}>
       <Helmet>
         <title>Meet JoeToenails</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1"
+        ></meta>
       </Helmet>
       <div
         style={{
@@ -281,10 +279,17 @@ const IndexPage = () => {
             <br />
             Your friendly neighborhood:
           </h1>
-          <RoleCall
-            setSelectedRole={setSelectedRole}
-            setSpeechBubble={setSpeechBubble}
-          />
+          {!device ? (
+            <RoleCall
+              setSelectedRole={setSelectedRole}
+              setSpeechBubble={setSpeechBubble}
+            />
+          ) : (
+            <MobileRoleCall
+              setSelectedRole={setSelectedRole}
+              setSpeechBubble={setSpeechBubble}
+            />
+          )}
           <img
             src={Me}
             alt="It's me, JoeToenails"
