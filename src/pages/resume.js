@@ -5,7 +5,7 @@ import "@fontsource/fira-sans";
 import { Link } from "gatsby";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
-const linkstyle = {
+const desktopStyle = {
   fontFamily: "cabin",
   textDecoration: "underline",
   fontWeight: 200,
@@ -51,7 +51,7 @@ const btnActive = {
 const Resume = () => {
   const [clicked, setClicked] = React.useState(false);
   const matches = useMediaQuery("(min-device-width:700px");
-  const linkstyle = matches ? linkstyle : mobileLinkStyle;
+  const linkstyle = matches ? desktopStyle : mobileLinkStyle;
   return (
     <div style={{ width: "93%", marginTop: "28px" }}>
       <div style={{ display: "flex", flexDirection: "row-reverse" }}>
