@@ -202,6 +202,8 @@ const FlashingButton = ({ nextTitle }) => {
 
 const SpeechBubble = ({ speechBubble }) => {
   const matches = useMediaQuery("(min-width:700px)");
+  const device = useMediaQuery("(max-device-width: 480px)");
+
   const [props, set, stop] = useSpring(() => ({
     opacity: 0,
   }));
@@ -219,9 +221,9 @@ const SpeechBubble = ({ speechBubble }) => {
         src={Bubble}
         style={{
           position: "absolute",
-          width: matches ? 190 : 120,
-          left: matches ? 325 : 250,
-          top: matches ? 350 : 320,
+          width: device ? 120 : 190,
+          left: device ? 240 : 340,
+          top: device ? 280 : 325,
         }}
       />
     </animated.div>
@@ -235,9 +237,12 @@ const IndexPage = () => {
   const device = useMediaQuery("(max-device-width: 480px)");
 
   React.useEffect(() => {
-    setTimeout(() => {
-      setSpeechBubble(true);
-    }, 8000);
+    setTimeout(
+      () => {
+        setSpeechBubble(true);
+      },
+      device ? 2000 : 8000
+    );
   }, []);
 
   return (
@@ -294,13 +299,14 @@ const IndexPage = () => {
             src={Me}
             alt="It's me, JoeToenails"
             style={{
-              width: 300,
-              height: 300,
+              width: device ? 200 : 300,
+              height: device ? 200 : 300,
               objectFit: "cover",
               objectPosition: "40%",
               position: "absolute",
               marginTop: "1.7em",
-              marginLeft: "1.7em",
+              marginLeft: device ? "20%" : "1.7em",
+              marginRight: device ? "20%" : 0,
               borderRadius: "5px",
             }}
           />
@@ -311,7 +317,7 @@ const IndexPage = () => {
           style={{
             marginLeft: "7%",
             width: "100%",
-            marginTop: matches ? 0 : "21em",
+            marginTop: device ? "15em" : matches ? 0 : "21em",
           }}
         >
           <HomePageContent selectedRole={selectedRole} />

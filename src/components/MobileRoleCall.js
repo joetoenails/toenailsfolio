@@ -25,8 +25,8 @@ const mobilePages = roles.map((role) => {
         height: 20,
         fontFamily: "shrikhand",
         fontWeight: 100,
-        fontSize: "1em",
-        marginTop: ".5em",
+        fontSize: "1.2em",
+        marginTop: ".3em",
         textAlign: "center",
         color: "#525563",
 

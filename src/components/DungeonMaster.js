@@ -38,12 +38,14 @@ const DungeonMaster = () => {
   const matches = useMediaQuery("(min-width:1100px)");
 
   return (
-    <div style={{ width: matches ? "90%" : "50%" }}>
-      <h1 style={h1}>My Dungeons</h1>
-      <p style={p}>
-        I'm a frequent D&D DM and player. I also love weird RPGs about rocks or
-        aliens or bears!{" "}
-      </p>
+    <div style={{ width: "90%", marginLeft: matches ? 0 : "1em" }}>
+      <div style={{ width: "90%" }}>
+        <h1 style={h1}>My Dungeons</h1>
+        <p style={p}>
+          I'm a frequent D&D DM and player. I also love weird RPGs about rocks
+          or aliens or bears!
+        </p>
+      </div>
 
       <div
         style={{
@@ -67,7 +69,7 @@ const DungeonMaster = () => {
           style={{
             display: "flex",
             flexDirection: "column",
-            marginLeft: "2em",
+            marginLeft: matches ? "2em" : "0em",
           }}
         >
           <h2 style={h1}>Oceanica</h2>
@@ -102,7 +104,7 @@ const DungeonMaster = () => {
           style={{
             display: "flex",
             flexDirection: "column",
-            marginLeft: "2em",
+            marginLeft: matches ? "2em" : 0,
           }}
         >
           <h2 style={h1}>Vampire Island</h2>
@@ -117,10 +119,16 @@ const DungeonMaster = () => {
       <h1 style={{ ...h1, marginBottom: 0, marginTop: ".5em" }}>
         My Characters
       </h1>
-      <p style={{ ...p, marginTop: 0 }}>
+      <p style={{ ...p, marginTop: 0, width: "100%" }}>
         Who I'm currently playing in my other campaigns
       </p>
-      <div style={{ display: "flex", flexDirection: "row", width: "90%" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: matches ? "row" : "column",
+          width: matches ? "90%" : "60%",
+        }}
+      >
         {chars.map((char) => {
           return (
             <div

@@ -14,7 +14,7 @@ const p = {
   textAlign: "center",
   padding: "24px",
   paddingBottom: "1em",
-  fontSize: "1em",
+  fontSize: ".9em",
 };
 
 const techStack = [
@@ -124,7 +124,7 @@ const Developer = () => {
       <p
         style={{
           ...p,
-
+          fontSize: "1em",
           marginTop: 0,
           paddingTop: 0,
           paddingLeft: 0,
@@ -135,9 +135,9 @@ const Developer = () => {
         I'm a team-oriented and product-minded developer with a love for
         building collaborative and interactive apps. I use each project as a
         chance to learn new technology, improve my skills, and better my code
-        clarity. I always endeavor to motivate my peers, lead with optimism, and
-        build long-lasting relationships. We can go further together, so let's
-        pair program!
+        clarity. I endeavor to motivate my peers, lead with optimism, and build
+        long-lasting relationships. We can go further together, so let's pair
+        program!
       </p>
       <div
         style={{
