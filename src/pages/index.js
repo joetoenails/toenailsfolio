@@ -2,13 +2,13 @@ import * as React from "react";
 import "@fontsource/shrikhand";
 import "@fontsource/cabin";
 import "@fontsource/fira-sans";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 import Me from "../images/TonelliMugshot.jpg";
 import leftArrow from "../images/leftArrow.svg";
 import rightArrow from "../images/rightArrow.svg";
 import Bubble from "../images/Bubble.png";
 import Navbar from "../components/navbar";
 import HomePageContent from "../components/HomePageContent";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 import { useTransition, useSpring, animated } from "react-spring";
 import { Helmet } from "react-helmet";
@@ -25,6 +25,15 @@ const pageStyles = {
   color: "#232129",
   paddingLeft: "96px",
   paddingRight: "96px",
+  paddingTop: "20px",
+  paddingBottom: "20px",
+  marginBottom: "50px",
+  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+};
+const mobileStyles = {
+  color: "#232129",
+  paddingLeft: "15px",
+  paddingRight: "15px",
   paddingTop: "20px",
   paddingBottom: "20px",
   marginBottom: "50px",
@@ -109,6 +118,8 @@ const titleButton = {
 };
 
 const RoleCall = ({ setSelectedRole, setSpeechBubble }) => {
+  const matches = useMediaQuery("(min-width:700px)");
+
   const [index, set] = React.useState(0);
 
   const nextTitle = () => {
@@ -134,7 +145,7 @@ const RoleCall = ({ setSelectedRole, setSpeechBubble }) => {
 
   const transitions = useTransition(index, (p) => p, {
     from: {
-      opacity: 0,
+      opacity: 1,
       transform: "translate3d(100%,0,0)",
       position: "absolute",
     },
@@ -154,7 +165,13 @@ const RoleCall = ({ setSelectedRole, setSpeechBubble }) => {
           return <Page key={key} style={props} />;
         })}
       </div>
-      <FlashingButton nextTitle={nextTitle} />
+
+      <div
+        style={{ marginRight: "1em", cursor: "pointer" }}
+        onClick={nextTitle}
+      >
+        <img style={{ width: 40, cursor: "pointer" }} src={rightArrow} />
+      </div>
     </div>
   );
 };
@@ -191,6 +208,7 @@ const FlashingButton = ({ nextTitle }) => {
 };
 
 const SpeechBubble = ({ speechBubble }) => {
+  const matches = useMediaQuery("(min-width:700px)");
   const [props, set, stop] = useSpring(() => ({
     opacity: 0,
   }));
@@ -206,7 +224,12 @@ const SpeechBubble = ({ speechBubble }) => {
       <img
         alt="bubble"
         src={Bubble}
-        style={{ position: "absolute", width: 190, left: 325, top: 350 }}
+        style={{
+          position: "absolute",
+          width: matches ? 190 : 120,
+          left: matches ? 325 : 250,
+          top: matches ? 350 : 320,
+        }}
       />
     </animated.div>
   );
@@ -224,7 +247,7 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <main style={pageStyles}>
+    <main style={matches ? pageStyles : mobileStyles}>
       <Helmet>
         <title>Meet JoeToenails</title>
       </Helmet>
@@ -240,14 +263,18 @@ const IndexPage = () => {
         <Navbar />
       </div>
       <div
-        style={{ display: "flex", flexDirection: matches ? "row" : "column" }}
+        style={{
+          display: "flex",
+          flexDirection: matches ? "row" : "column",
+        }}
       >
         <div>
           <h1
             style={{
               ...headingStyles,
+              fontSize: matches ? "2.5em" : "1.5em",
               marginBottom: ".5em",
-              marginLeft: ".5em",
+              marginLeft: matches ? ".5em" : "20%",
             }}
           >
             Hi, I'm <span style={{ color: palette.two }}>Joe</span>!
@@ -279,7 +306,7 @@ const IndexPage = () => {
           style={{
             marginLeft: "7%",
             width: "100%",
-            marginBottom: matches ? "20em" : "20em",
+            marginTop: matches ? 0 : "21em",
           }}
         >
           <HomePageContent selectedRole={selectedRole} />

@@ -1,7 +1,7 @@
 import * as React from "react";
+import "@fontsource/shrikhand";
 import "@fontsource/cabin";
 import "@fontsource/fira-sans";
-import "@fontsource/shrikhand";
 import { Link } from "gatsby";
 
 const linkstyle = {

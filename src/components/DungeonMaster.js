@@ -1,7 +1,7 @@
 import * as React from "react";
+import "@fontsource/shrikhand";
 import "@fontsource/cabin";
 import "@fontsource/fira-sans";
-import "@fontsource/shrikhand";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 

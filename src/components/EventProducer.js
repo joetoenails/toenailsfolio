@@ -4,6 +4,7 @@ import "@fontsource/cabin";
 import "@fontsource/fira-sans";
 import "@fontsource/shrikhand";
 import { GridList, GridListTile } from "@material-ui/core";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const toejam = [
   {
@@ -74,12 +75,21 @@ const deadspin = [
 const eventH1 = { fontFamily: "shrikhand", fontWeight: 100 };
 const eventH2 = { fontFamily: "shrikhand", fontWeight: 100, fontSize: "1.5em" };
 const eventP = { fontFamily: "cabin", fontSize: ".9em", marginTop: "5px" };
+const eventMobile = { fontFamily: "cabin", fontSize: ".7em", marginTop: "5px" };
 const EventProducer = () => {
+  const matches = useMediaQuery("(min-width:700px)");
+
   return (
     <div>
       <div style={{ width: "90%" }}>
         <h1 style={{ ...eventH1, marginBottom: 0, marginTop: 0 }}>My Events</h1>
-        <p style={{ fontFamily: "cabin", marginTop: 0 }}>
+        <p
+          style={{
+            fontFamily: "cabin",
+            marginTop: 0,
+            fontSize: matches ? "1em" : ".7em",
+          }}
+        >
           I've been producing events personally and professionally for more than
           5 years. They have always been a labor of love for me, and I get tha
           same thrill each time event day rolls around. My core belief is there
@@ -91,7 +101,7 @@ const EventProducer = () => {
         <div>
           <hr />
           <h1 style={{ ...eventH2, marginBottom: 0 }}>ToeJam</h1>
-          <p style={eventP}>
+          <p style={matches ? eventP : eventMobile}>
             ToeJam is a local, independent, and charity-focused music festival
             that takes place in the Hudson Valley. Now in its 5th year, ToeJam
             brings art, music, apples, camping, love (and sometimes kangaroos),
@@ -108,7 +118,7 @@ const EventProducer = () => {
         <div>
           <hr style={{ marginTop: "1em" }} />
           <h1 style={{ ...eventH2, marginBottom: 0 }}>The RSX-CADE</h1>
-          <p style={eventP}>
+          <p style={matches ? eventP : eventMobile}>
             The RS-XCADE invited guests to a fashion-forward yet retro-inspired
             indie arcade and sneaker release party in NYC. Custom art
             installations, one-of-a-kind arcade games, live visuals, ‘80s and
@@ -128,7 +138,7 @@ const EventProducer = () => {
           <h1 style={{ ...eventH2, marginBottom: 0 }}>
             The 24-Hour LeManstravaganza
           </h1>
-          <p style={eventP}>
+          <p style={matches ? eventP : eventMobile}>
             This 24-hour party celebrating the 24 Hours of Le Mans had a full
             day (and night) of programming, including movie screenings, video
             game tournaments, RC car racing, a sip and paint, a car show,
@@ -146,7 +156,7 @@ const EventProducer = () => {
         <div>
           <hr style={{ marginTop: "1em" }} />
           <h1 style={{ ...eventH2, marginBottom: 0 }}>The Deadspin Awards</h1>
-          <p style={eventP}>
+          <p style={matches ? eventP : eventMobile}>
             The Deadspin Awards brings the site’s honest and irreverent sports
             coverage to life with a blown-out award ceremony that celebrates the
             year’s most ridiculous on-and-off-the-field moments, stories, and

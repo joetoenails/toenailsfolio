@@ -1,7 +1,7 @@
 import * as React from "react";
+import "@fontsource/shrikhand";
 import "@fontsource/cabin";
 import "@fontsource/fira-sans";
-import "@fontsource/shrikhand";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const h1 = {
@@ -102,8 +102,7 @@ const techStack = [
 ];
 
 const Developer = () => {
-  const matches = useMediaQuery("(min-width:1100px)");
-  const matchesMed = useMediaQuery("(max-width:900px)");
+  const matches = useMediaQuery("(min-width:700px)");
 
   return (
     <div
@@ -125,11 +124,12 @@ const Developer = () => {
       <p
         style={{
           ...p,
+
           marginTop: 0,
           paddingTop: 0,
           paddingLeft: 0,
           textAlign: "left",
-          width: matchesMed ? "100%" : "75%",
+          width: matches ? "100%" : "300px",
         }}
       >
         I'm a team-oriented and product-minded developer with a love for
@@ -146,7 +146,7 @@ const Developer = () => {
           alignContent: "space-evenly",
           marginBottom: "1em",
           flexWrap: "wrap",
-          width: "100%",
+          width: matches ? "100%" : "90%",
         }}
       >
         {techStack.map((tech, index) => {
@@ -195,7 +195,7 @@ const Developer = () => {
           <img
             alt="two plus"
             style={{
-              width: 500,
+              width: matches ? 500 : "300px",
               height: 300,
               objectFit: "cover",
               boxShadow: "2px 2px 7px 0px #ababab",
@@ -222,7 +222,14 @@ const Developer = () => {
               Two Plus
             </a>
           </h2>
-          <p style={{ ...p, textAlign: "left", marginTop: 0 }}>
+          <p
+            style={{
+              ...p,
+              textAlign: "left",
+              marginTop: 0,
+              width: matches ? "100%" : "300px",
+            }}
+          >
             A live pair-programming tool and social platform for developers that
             includes discussion threads, live chat, follower/following systems,
             content upvoting and tagging, a dynamically loaded home page, and of
@@ -246,7 +253,7 @@ const Developer = () => {
             <img
               alt="scavenger hunt"
               style={{
-                width: 500,
+                width: matches ? 500 : "300px",
                 height: 300,
                 objectFit: "cover",
                 boxShadow: "2px 2px 7px 0px #ababab",
@@ -274,7 +281,13 @@ const Developer = () => {
               </a>
             </h2>
             <p
-              style={{ ...p, textAlign: "left", marginTop: 0, marginBottom: 0 }}
+              style={{
+                ...p,
+                textAlign: "left",
+                marginTop: 0,
+                marginBottom: 0,
+                width: matches ? "100%" : "300px",
+              }}
             >
               A machine-learning scavenger hunt that challenges you and a
               partner to be the first to find random items in your home. Machine
@@ -302,7 +315,7 @@ const Developer = () => {
             <img
               alt="buy real art"
               style={{
-                width: 500,
+                width: matches ? 500 : "300px",
                 height: 300,
                 objectFit: "cover",
                 boxShadow: "2px 2px 7px 0px #ababab",
@@ -329,7 +342,14 @@ const Developer = () => {
                 Buy Real Art
               </a>
             </h2>
-            <p style={{ ...p, textAlign: "left", marginTop: 0 }}>
+            <p
+              style={{
+                ...p,
+                textAlign: "left",
+                marginTop: 0,
+                width: matches ? "100%" : "300px",
+              }}
+            >
               Created as part of Fullstack Academy's "Grace Shopper Project",
               this demo includes all the features of a standard CRUD app. It
               features an Express-based, RESTful API system (with protected API
