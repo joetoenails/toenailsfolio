@@ -3,6 +3,7 @@ import "@fontsource/shrikhand";
 import "@fontsource/cabin";
 import "@fontsource/fira-sans";
 import { Link } from "gatsby";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
 
 const linkstyle = {
   fontFamily: "cabin",
@@ -12,6 +13,18 @@ const linkstyle = {
   color: "#525563",
   marginLeft: "1em",
   marginRight: "1em",
+  cursor: "pointer",
+  target: "_blank",
+};
+
+const mobileLinkStyle = {
+  fontFamily: "cabin",
+  textDecoration: "underline",
+  fontWeight: 200,
+  fontSize: ".9em",
+  color: "#525563",
+  marginLeft: ".5em",
+  marginRight: ".5em",
   cursor: "pointer",
   target: "_blank",
 };
@@ -37,7 +50,8 @@ const btnActive = {
 
 const Resume = () => {
   const [clicked, setClicked] = React.useState(false);
-
+  const matches = useMediaQuery("(min-device-width:700px");
+  const linkstyle = matches ? linkstyle : mobileLinkStyle;
   return (
     <div style={{ width: "93%", marginTop: "28px" }}>
       <div style={{ display: "flex", flexDirection: "row-reverse" }}>
@@ -66,10 +80,17 @@ const Resume = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-          flexDirection: "row",
+          flexDirection: matches ? "row" : "column",
         }}
       >
-        <div style={{ width: "50%", height: "90vh" }}>
+        <div
+          style={{
+            marginTop: matches ? 0 : "2em",
+            width: matches ? "50%" : "90%",
+            height: matches ? "90vh" : "50vh",
+            marginLeft: matches ? 0 : "10%",
+          }}
+        >
           <iframe
             frameborder="0"
             scrolling="no"
@@ -83,7 +104,7 @@ const Resume = () => {
             style={{
               fontFamily: "shrikhand",
               marginBottom: 0,
-              marginTop: "2em",
+              marginTop: matches ? "2em" : ".3em",
             }}
           >
             Get in touch!

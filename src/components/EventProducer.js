@@ -78,6 +78,7 @@ const eventP = { fontFamily: "cabin", fontSize: ".9em", marginTop: "5px" };
 const eventMobile = { fontFamily: "cabin", fontSize: ".7em", marginTop: "5px" };
 const EventProducer = () => {
   const matches = useMediaQuery("(min-width:700px)");
+  const device = useMediaQuery("(max-device-width: 480px)");
 
   return (
     <div>
@@ -87,7 +88,7 @@ const EventProducer = () => {
           style={{
             fontFamily: "cabin",
             marginTop: 0,
-            fontSize: matches ? "1em" : ".7em",
+            fontSize: device ? ".7em" : "1em",
           }}
         >
           I've been producing events personally and professionally for more than
