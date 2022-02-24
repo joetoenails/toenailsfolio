@@ -4,6 +4,7 @@ import "@fontsource/cabin";
 import "@fontsource/fira-sans";
 import { GatsbyImage, StaticImage } from "gatsby-plugin-image";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
+import VampireBeach from "../images/vamp-crop.png";
 
 const h1 = {
   fontFamily: "shrikhand",
@@ -91,14 +92,12 @@ const DungeonMaster = () => {
         <img
           alt="vampire island"
           style={{
-            width: "90%",
+            width: matches ? 355 : "90%",
             height: 125,
             objectFit: "cover",
             borderRadius: "5px",
           }}
-          src={
-            "https://babette-cole.com/wp-content/uploads/2016/07/the-vampires-holiday-cover.jpg"
-          }
+          src={VampireBeach}
         />
         <div
           style={{

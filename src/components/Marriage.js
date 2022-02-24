@@ -4,6 +4,7 @@ import "@fontsource/cabin";
 import "@fontsource/fira-sans";
 import Certif from "../images/Certif.png";
 import { StaticImage } from "gatsby-plugin-image";
+import MarriagePic from "../images/marriage.jpg";
 
 const h1 = {
   fontFamily: "shrikhand",
@@ -48,7 +49,7 @@ const Marriage = () => {
           objectFit: "cover",
           borderRadius: "5px",
         }}
-        src="https://scontent-lga3-1.cdninstagram.com/v/t51.2885-15/sh0.08/e35/c0.180.1440.1440a/s640x640/120829748_2006912536106041_3478973308899220305_n.jpg?tp=1&_nc_ht=scontent-lga3-1.cdninstagram.com&_nc_cat=101&_nc_ohc=guZvTa-2BxAAX-mqcrN&oh=cf68ff2c198fe9d79bb11f96a26a7a98&oe=6068EC81"
+        src={MarriagePic}
       />
     </div>
   );
