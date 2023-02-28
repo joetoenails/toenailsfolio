@@ -7,6 +7,9 @@ import JSIcon from "../images/javascript_icon.png";
 import Springboot from "../images/springboot.png";
 import Mongo from "../images/mongo.png";
 import Kafka from "../images/apache-kafka.jpg";
+import HtmlLogo from "../images/html-logo.png"
+import FirebaseLogo from "../images/firebase-logo.png"
+import AngularLogo from "../images/angular-logo.svg"
 
 const h1 = {
   fontFamily: "cabin",
@@ -27,6 +30,10 @@ const techStack = [
     icon: JSIcon,
   },
   {
+    name: "Typescript",
+    icon: "https://cdn.iconscout.com/icon/free/png-512/typescript-1174965.png",
+  },
+  {
     name: "Node.js",
     icon: "https://cdn.iconscout.com/icon/free/png-512/node-js-1174925.png",
   },
@@ -34,15 +41,18 @@ const techStack = [
     name: "PostgreSQL",
     icon: "https://icon-library.com/images/postgres-icon/postgres-icon-7.jpg",
   },
-  { name: "Firebase", icon: "https://i.imgur.com/4R5umfV.png" },
   {
     name: "React",
     icon: "https://cdn.auth0.com/blog/react-js/react.png",
   },
+  {
+    name: "Angular",
+    icon: AngularLogo,
+  },
   { name: "Redux", icon: "https://cdn.worldvectorlogo.com/logos/redux.svg" },
   {
     name: "HTML",
-    icon: "https://image.flaticon.com/icons/png/512/732/732212.png",
+    icon: HtmlLogo,
   },
   {
     name: "CSS",
@@ -92,13 +102,8 @@ const techStack = [
     icon: Springboot,
   },
   {
-    name: "Typescript",
-    icon: "https://cdn.iconscout.com/icon/free/png-512/typescript-1174965.png",
-  },
-  {
-    name: "Travis CI/CD",
-    icon:
-      "https://e7.pngegg.com/pngimages/582/449/png-clipart-travis-ci-continuous-integration-software-build-software-testing-github-continuous-logo-fictional-character.png",
+    name: "Firebase",
+    icon: FirebaseLogo,
   },
 ];
 
