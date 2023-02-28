@@ -210,7 +210,7 @@ const Developer = () => {
           width: matches ? "100%" : "300px",
         }}
       >
-        I'm currently employed as a Cloud Native Engineer at Cedrus Digital. I
+        I'm currently employed as a Cloud Native Engineer at Cedrus Digital (now Brillio). I
         actively work with clients to migrate legacy systems to more modern
         cloud infratructure. Major projects have included:
       </p>
