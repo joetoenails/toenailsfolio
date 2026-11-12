@@ -18,27 +18,26 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "dependencies": {
-    "@fontsource/cabin": "^4.2.1",
-    "@fontsource/fira-sans": "^4.2.1",
-    "@fontsource/shrikhand": "^4.2.1",
-    "@material-ui/core": "^4.11.3",
-    "babel-plugin-styled-components": "^1.12.0",
-    "gatsby": "^3.0.1",
-    "gatsby-image": "^2.11.0",
-    "gatsby-plugin-image": "^1.0.0",
-    "gatsby-plugin-manifest": "^3.0.0",
-    "gatsby-plugin-sharp": "^3.0.0",
-    "gatsby-plugin-styled-components": "^3.10.0",
-    "gatsby-source-filesystem": "^3.0.0",
-    "gatsby-transformer-sharp": "^3.0.0",
-    "react": "^16.13.1",
+    "@fontsource/cabin": "^5.0.0",
+    "@fontsource/fira-sans": "^5.0.0",
+    "@fontsource/shrikhand": "^5.0.0",
+    "@material-ui/core": "^4.12.4",
+    "babel-plugin-styled-components": "^1.13.0",
+    "gatsby": "^5.16.1",
+    "gatsby-plugin-image": "^3.16.0",
+    "gatsby-plugin-manifest": "^5.16.0",
+    "gatsby-plugin-sharp": "^5.16.0",
+    "gatsby-plugin-styled-components": "^6.16.0",
+    "gatsby-source-filesystem": "^5.16.0",
+    "gatsby-transformer-sharp": "^5.16.0",
+    "react": "^18.3.1",
     "react-animations": "^1.0.0",
-    "react-dom": "^16.13.1",
+    "react-dom": "^18.3.1",
     "react-helmet": "^6.1.0",
-    "react-spring": "^8.0.27",
-    "styled-components": "^5.2.1"
+    "react-spring": "^9.0.0",
+    "styled-components": "^6.6.0"
   },
   "devDependencies": {
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^6.0.0"
   }
 }

@@ -1,14 +1,15 @@
 import * as React from "react";
 import { useTransition, animated } from "react-spring";
-import Birdwatcher from "./Birdwatcher";
 import Developer from "./Developer";
 import DungeonMaster from "./DungeonMaster";
 import EventProducer from "./EventProducer";
 import Marriage from "./Marriage";
+import ParkVolunteerism from "./ParkVolunteerism";
 import ProjectManager from "./ProjectManager";
 
 const HomePageContent = ({ selectedRole }) => {
-  const transitions = useTransition(selectedRole, (p) => p, {
+  const transitions = useTransition([selectedRole], {
+    keys: (item) => item,
     from: {
       opacity: 0,
       transform: "translate3d(100%,0,0)",
@@ -19,59 +20,49 @@ const HomePageContent = ({ selectedRole }) => {
   });
 
   if (selectedRole === "developer") {
-    return transitions.map(({ item, props, key }) => {
-      return (
-        <animated.div key={key} style={props}>
-          <Developer />
-        </animated.div>
-      );
-    });
+    return transitions((style) => (
+      <animated.div style={style}>
+        <Developer />
+      </animated.div>
+    ));
   }
   if (selectedRole === "event producer") {
-    return transitions.map(({ item, props, key }) => {
-      return (
-        <animated.div key={key} style={props}>
-          <EventProducer />
-        </animated.div>
-      );
-    });
+    return transitions((style) => (
+      <animated.div style={style}>
+        <EventProducer />
+      </animated.div>
+    ));
   }
   if (selectedRole === "marriage officiant") {
-    return transitions.map(({ item, props, key }) => {
-      return (
-        <animated.div key={key} style={props}>
-          <Marriage />
-        </animated.div>
-      );
-    });
+    return transitions((style) => (
+      <animated.div style={style}>
+        <Marriage />
+      </animated.div>
+    ));
   }
   if (selectedRole === "dungeon master") {
-    return transitions.map(({ item, props, key }) => {
-      return (
-        <animated.div key={key} style={props}>
-          <DungeonMaster />
-        </animated.div>
-      );
-    });
+    return transitions((style) => (
+      <animated.div style={style}>
+        <DungeonMaster />
+      </animated.div>
+    ));
   }
   if (selectedRole === "project manager") {
-    return transitions.map(({ item, props, key }) => {
-      return (
-        <animated.div key={key} style={props}>
-          <ProjectManager />
-        </animated.div>
-      );
-    });
+    return transitions((style) => (
+      <animated.div style={style}>
+        <ProjectManager />
+      </animated.div>
+    ));
   }
-  if (selectedRole === "birdwatcher") {
-    return transitions.map(({ item, props, key }) => {
-      return (
-        <animated.div key={key} style={props}>
-          <Birdwatcher />
-        </animated.div>
-      );
-    });
+  if (selectedRole === "park volunteer") {
+    return transitions((style) => (
+      <animated.div style={style}>
+        <ParkVolunteerism />
+      </animated.div>
+    ));
   }
+
+  return null;
 };
 
 export default HomePageContent;

@@ -14,7 +14,7 @@ const roles = [
   "marriage officiant",
   "dungeon master",
   "project manager",
-  "birdwatcher",
+  "volunteer organizer",
 ];
 
 const mobilePages = roles.map((role) => {
@@ -42,7 +42,7 @@ const MobileRoleCall = ({ setSelectedRole, setSpeechBubble }) => {
   const [index, set] = React.useState(0);
 
   const nextTitle = () => {
-    let newIdx = (index + 1) % 6;
+    let newIdx = (index + 1) % roles.length;
     set(newIdx);
     setSelectedRole(roles[newIdx]);
     setSpeechBubble(false);
@@ -51,11 +51,11 @@ const MobileRoleCall = ({ setSelectedRole, setSpeechBubble }) => {
   const prevTitle = () => {
     let newIdx = index;
     if (newIdx === 0) {
-      set(5);
-      setSelectedRole(roles[5]);
+      set(roles.length - 1);
+      setSelectedRole(roles[roles.length - 1]);
       setSpeechBubble(false);
     } else {
-      newIdx = (index - 1) % 6;
+      newIdx = (index - 1) % roles.length;
       set(newIdx);
       setSelectedRole(roles[newIdx]);
       setSpeechBubble(false);

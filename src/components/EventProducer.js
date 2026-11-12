@@ -6,76 +6,96 @@ import "@fontsource/shrikhand";
 import { GridList, GridListTile } from "@material-ui/core";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 
+const thumb = (url) => {
+  if (!url) return url;
+  const separator = url.includes("?") ? "&" : "?";
+  return `${url}${separator}w=800&h=600&fit=crop`;
+};
+
 const toejam = [
   {
-    img:
-      "https://bigtoeproductions.files.wordpress.com/2019/06/20988821_10210456572790327_2441002102962301907_o-1.jpg",
+    img: thumb(
+      "https://bigtoeproductions.files.wordpress.com/2019/06/20988821_10210456572790327_2441002102962301907_o-1.jpg"
+    ),
     col: 1,
     row: 1,
   },
   {
-    img:
-      "https://bigtoeproductions.files.wordpress.com/2019/06/20988905_10210456536189412_5752576676158497518_o.jpg?strip=info&w=712",
+    img: thumb(
+      "https://bigtoeproductions.files.wordpress.com/2019/06/20988905_10210456536189412_5752576676158497518_o.jpg"
+    ),
     col: 1,
     row: 1,
   },
   {
-    img:
-      "https://bigtoeproductions.files.wordpress.com/2019/06/0008672_0008672-r1-018-7a.jpg?strip=info&w=1805",
+    img: thumb(
+      "https://bigtoeproductions.files.wordpress.com/2019/06/0008672_0008672-r1-018-7a.jpg"
+    ),
     col: 1,
     row: 1,
   },
   {
-    img:
-      "https://bigtoeproductions.files.wordpress.com/2019/06/39744850_10213040015014768_1649729258022502400_o.jpg?strip=info&w=1287",
+    img: thumb(
+      "https://bigtoeproductions.files.wordpress.com/2019/06/39744850_10213040015014768_1649729258022502400_o.jpg"
+    ),
     col: 1,
     row: 1,
   },
   {
-    img:
-      "https://bigtoeproductions.files.wordpress.com/2019/06/unnamed.jpg?strip=info&w=2000",
+    img: thumb(
+      "https://bigtoeproductions.files.wordpress.com/2019/06/unnamed.jpg"
+    ),
     col: 1,
     row: 1,
   },
   {
-    img:
-      "https://bigtoeproductions.files.wordpress.com/2019/06/40139761_10213040024615008_8032652943142420480_o.jpg?strip=info&w=1225",
+    img: thumb(
+      "https://bigtoeproductions.files.wordpress.com/2019/06/40139761_10213040024615008_8032652943142420480_o.jpg"
+    ),
     col: 1,
     row: 1,
   },
 ];
 
 const rsx = [
-  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8544.jpg?w=1280",
-  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8442.jpg?w=829&h=&zoom=2",
-  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8219.jpg?w=829&h=&zoom=2",
-  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8236.jpg?w=2500&h=",
-  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8032.jpg?w=829&h=&zoom=2",
-  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8495.jpg?w=2500&h=",
-];
+  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8544.jpg",
+  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8442.jpg",
+  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8219.jpg",
+  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8236.jpg",
+  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8032.jpg",
+  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8495.jpg",
+].map(thumb);
 
 const lemans = [
-  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k9249.jpg?strip=info&w=2000",
-  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8750.jpg?strip=info&w=2000",
-  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k9330.jpg?strip=info&w=2000",
-  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8586.jpg?strip=info&w=2000",
-  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8967.jpg?strip=info&w=2000",
-  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k9196.jpg?strip=info&w=2000",
-];
+  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k9249.jpg",
+  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8750.jpg",
+  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k9330.jpg",
+  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8586.jpg",
+  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k8967.jpg",
+  "https://bigtoeproductions.files.wordpress.com/2019/06/0c5k9196.jpg",
+].map(thumb);
 
 const deadspin = [
-  "https://bigtoeproductions.files.wordpress.com/2019/06/dsc08880-1.jpg?strip=info&w=2000",
-  "https://bigtoeproductions.files.wordpress.com/2019/06/dsc08867.jpg?strip=info&w=2000",
-  "https://bigtoeproductions.files.wordpress.com/2019/06/img_9988.jpg?strip=info&w=2000",
-  "https://bigtoeproductions.files.wordpress.com/2019/06/dsc08968.jpg?strip=info&w=2000",
-  "https://bigtoeproductions.files.wordpress.com/2019/06/dsc08839.jpg?strip=info&w=2000",
-  "https://bigtoeproductions.files.wordpress.com/2019/06/dsc08741.jpg?strip=info&w=2000",
-];
+  "https://bigtoeproductions.files.wordpress.com/2019/06/dsc08880-1.jpg",
+  "https://bigtoeproductions.files.wordpress.com/2019/06/dsc08867.jpg",
+  "https://bigtoeproductions.files.wordpress.com/2019/06/img_9988.jpg",
+  "https://bigtoeproductions.files.wordpress.com/2019/06/dsc08968.jpg",
+  "https://bigtoeproductions.files.wordpress.com/2019/06/dsc08839.jpg",
+  "https://bigtoeproductions.files.wordpress.com/2019/06/dsc08741.jpg",
+].map(thumb);
 
 const eventH1 = { fontFamily: "shrikhand", fontWeight: 100 };
 const eventH2 = { fontFamily: "shrikhand", fontWeight: 100, fontSize: "1.5em" };
 const eventP = { fontFamily: "cabin", fontSize: ".9em", marginTop: "5px" };
 const eventMobile = { fontFamily: "cabin", fontSize: ".7em", marginTop: "5px" };
+const eventImageStyle = {
+  width: "100%",
+  height: "100%",
+  objectFit: "cover",
+  backgroundColor: "#f3f3f3",
+  opacity: 0,
+  transition: "opacity 200ms ease-in",
+};
 const EventProducer = () => {
   const matches = useMediaQuery("(min-width:700px)");
   const device = useMediaQuery("(max-device-width: 480px)");
@@ -108,10 +128,22 @@ const EventProducer = () => {
             brings art, music, apples, camping, love (and sometimes kangaroos),
             all together for a day of unforgettable memories.
           </p>
-          <GridList cellHeight={150} cols={3}>
+          <GridList cellHeight={180} cols={3}>
             {toejam.map((toe, index) => (
               <GridListTile key={index} cols={toe.col}>
-                <img alt={index} src={toe.img} />
+                <img
+                  alt={index}
+                  src={toe.img}
+                  loading="lazy"
+                  decoding="async"
+                  style={eventImageStyle}
+                  onLoad={(event) => {
+                    event.currentTarget.style.opacity = 1;
+                  }}
+                  onError={(event) => {
+                    event.currentTarget.style.display = "none";
+                  }}
+                />
               </GridListTile>
             ))}
           </GridList>
@@ -126,10 +158,22 @@ const EventProducer = () => {
             ‘90s-inspired decor, and a streetstyle-themed photobooth, arrived
             just in time for the latest RS-X drop.
           </p>
-          <GridList cellHeight={150} cols={3}>
+          <GridList cellHeight={180} cols={3}>
             {rsx.map((pic, index) => (
               <GridListTile key={index} cols={1}>
-                <img alt={index} src={pic} />
+                <img
+                  alt={index}
+                  src={pic}
+                  loading="lazy"
+                  decoding="async"
+                  style={eventImageStyle}
+                  onLoad={(event) => {
+                    event.currentTarget.style.opacity = 1;
+                  }}
+                  onError={(event) => {
+                    event.currentTarget.style.display = "none";
+                  }}
+                />
               </GridListTile>
             ))}
           </GridList>
@@ -146,10 +190,22 @@ const EventProducer = () => {
             neighborhood tours, & more – The LeManstravaganza was not one to be
             missed.
           </p>
-          <GridList cellHeight={150} cols={3}>
+          <GridList cellHeight={180} cols={3}>
             {lemans.map((pic, index) => (
               <GridListTile key={index} cols={1}>
-                <img alt={index} src={pic} />
+                <img
+                  alt={index}
+                  src={pic}
+                  loading="lazy"
+                  decoding="async"
+                  style={eventImageStyle}
+                  onLoad={(event) => {
+                    event.currentTarget.style.opacity = 1;
+                  }}
+                  onError={(event) => {
+                    event.currentTarget.style.display = "none";
+                  }}
+                />
               </GridListTile>
             ))}
           </GridList>
@@ -164,10 +220,22 @@ const EventProducer = () => {
             people. This heavily-attended, star-studded awards show-style event
             has rightfully earned its nickname of “The Razzies of Sports.”
           </p>
-          <GridList cellHeight={150} cols={3}>
+          <GridList cellHeight={180} cols={3}>
             {deadspin.map((pic, index) => (
               <GridListTile key={index} cols={1}>
-                <img alt={index} src={pic} />
+                <img
+                  alt={index}
+                  src={pic}
+                  loading="lazy"
+                  decoding="async"
+                  style={eventImageStyle}
+                  onLoad={(event) => {
+                    event.currentTarget.style.opacity = 1;
+                  }}
+                  onError={(event) => {
+                    event.currentTarget.style.display = "none";
+                  }}
+                />
               </GridListTile>
             ))}
           </GridList>
