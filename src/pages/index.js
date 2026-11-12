@@ -65,12 +65,12 @@ const transMain = {
 };
 
 const roles = [
-  "developer",
   "event producer",
+  "park volunteer",
+  "developer",
+  "project manager",
   "marriage officiant",
   "dungeon master",
-  "project manager",
-  "birdwatcher",
 ];
 
 const photoRoles = [
@@ -121,7 +121,7 @@ const RoleCall = ({ setSelectedRole, setSpeechBubble }) => {
   const [index, set] = React.useState(0);
 
   const nextTitle = () => {
-    let newIdx = (index + 1) % 6;
+    let newIdx = (index + 1) % roles.length;
     set(newIdx);
     setSelectedRole(roles[newIdx]);
     setSpeechBubble(false);
@@ -130,18 +130,19 @@ const RoleCall = ({ setSelectedRole, setSpeechBubble }) => {
   const prevTitle = () => {
     let newIdx = index;
     if (newIdx === 0) {
-      set(5);
-      setSelectedRole(roles[5]);
+      set(roles.length - 1);
+      setSelectedRole(roles[roles.length - 1]);
       setSpeechBubble(false);
     } else {
-      newIdx = (index - 1) % 6;
+      newIdx = (index - 1) % roles.length;
       set(newIdx);
       setSelectedRole(roles[newIdx]);
       setSpeechBubble(false);
     }
   };
 
-  const transitions = useTransition(index, (p) => p, {
+  const transitions = useTransition([index], {
+    keys: (item) => item,
     from: {
       opacity: 1,
       transform: "translate3d(100%,0,0)",
@@ -158,9 +159,9 @@ const RoleCall = ({ setSelectedRole, setSpeechBubble }) => {
       </div>
 
       <div id={index} style={transMain}>
-        {transitions.map(({ item, props, key }) => {
+        {transitions((style, item) => {
           const Page = pages[item];
-          return <Page key={key} style={props} />;
+          return <Page key={item} style={style} />;
         })}
       </div>
 
@@ -171,7 +172,7 @@ const RoleCall = ({ setSelectedRole, setSpeechBubble }) => {
 
 const FlashingButton = ({ nextTitle }) => {
   let toggle = true;
-  const [props, set, stop] = useSpring(() => ({
+  const [props, api] = useSpring(() => ({
     opacity: 1,
     color: "black",
   }));
@@ -179,17 +180,22 @@ const FlashingButton = ({ nextTitle }) => {
   React.useEffect(() => {
     const flash = setInterval(() => {
       toggle = !toggle;
-      set({
+      api.start({
         opacity: toggle ? 1 : 0,
         color: toggle ? "blue" : "black",
       });
     }, 500);
 
-    setTimeout(() => {
+    const timeout = setTimeout(() => {
       clearInterval(flash);
-      set({ opacity: 1 });
+      api.start({ opacity: 1, color: "black" });
     }, 5000);
-  }, []);
+
+    return () => {
+      clearInterval(flash);
+      clearTimeout(timeout);
+    };
+  }, [api]);
 
   return (
     <animated.div style={props}>
@@ -204,16 +210,14 @@ const SpeechBubble = ({ speechBubble }) => {
   const matches = useMediaQuery("(min-width:700px)");
   const device = useMediaQuery("(max-device-width: 480px)");
 
-  const [props, set, stop] = useSpring(() => ({
-    opacity: 0,
+  const [props, api] = useSpring(() => ({
+    opacity: speechBubble ? 1 : 0,
   }));
 
-  if (speechBubble) {
-    set({ opacity: 1 });
-  }
-  if (!speechBubble) {
-    set({ opacity: 0 });
-  }
+  React.useEffect(() => {
+    api.start({ opacity: speechBubble ? 1 : 0 });
+  }, [api, speechBubble]);
+
   return (
     <animated.div style={props}>
       <img
@@ -231,7 +235,7 @@ const SpeechBubble = ({ speechBubble }) => {
 };
 
 const IndexPage = () => {
-  const [selectedRole, setSelectedRole] = React.useState("developer");
+  const [selectedRole, setSelectedRole] = React.useState("event producer");
   const [speechBubble, setSpeechBubble] = React.useState(false);
   const matches = useMediaQuery("(min-width:700px)");
   const device = useMediaQuery("(max-device-width: 480px)");

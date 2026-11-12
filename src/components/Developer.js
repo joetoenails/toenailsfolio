@@ -10,6 +10,7 @@ import Kafka from "../images/apache-kafka.jpg";
 import HtmlLogo from "../images/html-logo.png"
 import FirebaseLogo from "../images/firebase-logo.png"
 import AngularLogo from "../images/angular-logo.svg"
+import H100Logo from "../images/h100.png"
 
 const h1 = {
   fontFamily: "cabin",
@@ -24,6 +25,9 @@ const p = {
   fontSize: ".9em",
 };
 
+const simpleIcon = (slug) =>
+  "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/" + slug + ".svg";
+
 const techStack = [
   {
     name: "Javascript",
@@ -31,45 +35,44 @@ const techStack = [
   },
   {
     name: "Typescript",
-    icon: "https://cdn.iconscout.com/icon/free/png-512/typescript-1174965.png",
+    icon: simpleIcon("typescript"),
   },
   {
     name: "Node.js",
-    icon: "https://cdn.iconscout.com/icon/free/png-512/node-js-1174925.png",
+    icon: simpleIcon("nodedotjs"),
   },
   {
     name: "PostgreSQL",
-    icon: "https://icon-library.com/images/postgres-icon/postgres-icon-7.jpg",
+    icon: simpleIcon("postgresql"),
   },
   {
     name: "React",
-    icon: "https://cdn.auth0.com/blog/react-js/react.png",
+    icon: simpleIcon("react"),
   },
   {
     name: "Angular",
     icon: AngularLogo,
   },
-  { name: "Redux", icon: "https://cdn.worldvectorlogo.com/logos/redux.svg" },
+  { name: "Redux", icon: simpleIcon("redux") },
   {
     name: "HTML",
     icon: HtmlLogo,
   },
   {
     name: "CSS",
-    icon: "https://cdn.iconscout.com/icon/free/png-256/css-118-569410.png",
+    icon: simpleIcon("css3"),
   },
   {
     name: "Git",
-    icon: "https://git-scm.com/images/logos/downloads/Git-Icon-Black.png",
+    icon: simpleIcon("git"),
   },
   {
     name: "Socket.io",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/9/96/Socket-io.svg",
+    icon: simpleIcon("socketdotio"),
   },
   {
     name: "Python",
-    icon:
-      "https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png",
+    icon: simpleIcon("python"),
   },
   {
     name: "Apache Kafka",
@@ -77,16 +80,15 @@ const techStack = [
   },
   {
     name: "OAuth",
-    icon: "http://farm2.static.flickr.com/1333/1416054260_b519838f38_o.png",
+    icon: simpleIcon("oauth"),
   },
   {
     name: "Heroku",
-    icon: "https://cdn.iconscout.com/icon/free/png-512/heroku-5-569467.png",
+    icon: simpleIcon("heroku"),
   },
   {
     name: "Webpack",
-    icon:
-      "data:image/png;base64,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",
+    icon: simpleIcon("webpack"),
   },
   {
     name: "MongoDB",
@@ -94,8 +96,7 @@ const techStack = [
   },
   {
     name: "Google Cloud",
-    icon:
-      "https://cdn.iconscout.com/icon/free/png-256/google-cloud-platform-2-569356.png",
+    icon: simpleIcon("googlecloud"),
   },
   {
     name: "Java Springboot",
@@ -174,9 +175,13 @@ const Developer = () => {
                   style={{
                     width: "30px",
                     height: "30px",
-                    objectFit: "cover",
+                    objectFit: "contain",
+                    display: "block",
                   }}
                   src={tech.icon}
+                  onError={(event) => {
+                    event.currentTarget.style.display = "none";
+                  }}
                 />
               </div>
               <small style={{ fontFamily: "fira sans", textAlign: "center" }}>
@@ -195,8 +200,58 @@ const Developer = () => {
           marginBottom: 0,
         }}
       >
-        Current Work
+        Previous Work
       </h1>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          gap: matches ? "1.5rem" : "0.75rem",
+          marginTop: "0.75em",
+          marginBottom: "0.5em",
+          width: "100%",
+          maxWidth: "760px",
+          flexWrap: matches ? "nowrap" : "wrap",
+        }}
+      >
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            width: "clamp(300px, 36vw, 520px)",
+            minWidth: "300px",
+            flexShrink: 0,
+            alignSelf: "center",
+          }}
+        >
+          <img
+            alt="H100"
+            src={H100Logo}
+            style={{
+              width: "100%",
+              height: "auto",
+              objectFit: "contain",
+              display: "block",
+              margin: 0,
+            }}
+          />
+        </div>
+        <h2
+          style={{
+            ...h1,
+            margin: 0,
+            paddingLeft: 0,
+            textAlign: "left",
+            color: "#029676",
+            fontSize: "clamp(1.3rem, 2.1vw, 2.1rem)",
+            lineHeight: 1.1,
+            alignSelf: "center",
+          }}
+        >
+          CVS Health
+        </h2>
+      </div>
       <p
         style={{
           ...p,
@@ -210,43 +265,16 @@ const Developer = () => {
           width: matches ? "100%" : "300px",
         }}
       >
-        I'm currently employed as a Cloud Native Engineer at Cedrus Digital (now Brillio). I
-        actively work with clients to migrate legacy systems to more modern
-        cloud infratructure. Major projects have included:
+        Healthcare data is only useful when it all works together. I worked on
+        making that happen, leading integrations that brought external medical
+        records from platforms like Epic, Cerner, and Athena into the CVS app.
+        Along the way, I built backend services supporting millions of app users,
+        worked with FHIR and HL7 data standards, and developed automated testing
+        workflows to keep releases reliable and backwards compatible. I also wore
+        a few different hats, from helping shape product requirements and
+        coordinate engineering work to leading knowledge-sharing sessions across
+        teams.
       </p>
-      <li
-        style={{
-          fontFamily: "fira sans",
-          paddingLeft: "1.2em",
-          paddingBottom: ".2em",
-          fontSize: ".8em",
-        }}
-      >
-        A migration effort to move an on-prem MongoDB cluster to a cloud SaaS
-        solution for a major retailer.
-      </li>
-      <li
-        style={{
-          fontFamily: "fira sans",
-          paddingLeft: "1.2em",
-          paddingBottom: ".2em",
-          fontSize: ".8em",
-        }}
-      >
-        API modernization and migration to Google Cloud Platform/Google
-        Kubernetes Engine for a national healthcare provider.
-      </li>
-      <li
-        style={{
-          fontFamily: "fira sans",
-          paddingLeft: "1.2em",
-          paddingBottom: ".2em",
-          fontSize: ".8em",
-        }}
-      >
-        Proof of Concept implementation of event-driven architecture solutions
-        using Apache Kafka and MongoDB for a national healthcare provider.
-      </li>
       <h1 style={{ fontFamily: "shrikhand", fontWeight: 100, marginTop: 0 }}>
         Personal Projects
       </h1>
@@ -315,19 +343,6 @@ const Developer = () => {
             width: "100%",
           }}
         >
-          <a href="https://github.com/joetoenails/scavenger-hunt">
-            <img
-              alt="scavenger hunt"
-              style={{
-                width: matches ? 500 : "300px",
-                height: 300,
-                objectFit: "cover",
-                boxShadow: "2px 2px 7px 0px #ababab",
-                borderRadius: "10px",
-              }}
-              src="https://camo.githubusercontent.com/48cf3bd0ae4900c1622f81f63938344a978d1bdc6f489b074ccf21a19e184ebc/68747470733a2f2f692e696d6775722e636f6d2f647867416551382e6a7067"
-            />
-          </a>
           <div
             style={{
               display: "flex",

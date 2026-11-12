@@ -37,10 +37,6 @@ const Navbar = () => {
 
   return (
     <div>
-      <a style={linkstyle} href="mailto:joe.d.tonelli@gmail.com">
-        Contact
-      </a>
-
       <a
         target="_blank"
         style={linkstyle}
@@ -56,7 +52,7 @@ const Navbar = () => {
         Github
       </a>
       <Link style={linkstyle} to="/resume">
-        Resume
+        Contact
       </Link>
     </div>
   );
