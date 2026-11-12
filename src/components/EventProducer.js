@@ -93,8 +93,6 @@ const eventImageStyle = {
   height: "100%",
   objectFit: "cover",
   backgroundColor: "#f3f3f3",
-  opacity: 0,
-  transition: "opacity 200ms ease-in",
 };
 const EventProducer = () => {
   const matches = useMediaQuery("(min-width:700px)");
@@ -137,9 +135,6 @@ const EventProducer = () => {
                   loading="lazy"
                   decoding="async"
                   style={eventImageStyle}
-                  onLoad={(event) => {
-                    event.currentTarget.style.opacity = 1;
-                  }}
                   onError={(event) => {
                     event.currentTarget.style.display = "none";
                   }}
@@ -167,9 +162,6 @@ const EventProducer = () => {
                   loading="lazy"
                   decoding="async"
                   style={eventImageStyle}
-                  onLoad={(event) => {
-                    event.currentTarget.style.opacity = 1;
-                  }}
                   onError={(event) => {
                     event.currentTarget.style.display = "none";
                   }}
@@ -199,9 +191,6 @@ const EventProducer = () => {
                   loading="lazy"
                   decoding="async"
                   style={eventImageStyle}
-                  onLoad={(event) => {
-                    event.currentTarget.style.opacity = 1;
-                  }}
                   onError={(event) => {
                     event.currentTarget.style.display = "none";
                   }}
@@ -229,9 +218,6 @@ const EventProducer = () => {
                   loading="lazy"
                   decoding="async"
                   style={eventImageStyle}
-                  onLoad={(event) => {
-                    event.currentTarget.style.opacity = 1;
-                  }}
                   onError={(event) => {
                     event.currentTarget.style.display = "none";
                   }}
