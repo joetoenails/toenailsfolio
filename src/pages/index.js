@@ -295,6 +295,7 @@ const IndexPage = () => {
             />
           ) : (
             <MobileRoleCall
+              selectedRole={selectedRole}
               setSelectedRole={setSelectedRole}
               setSpeechBubble={setSpeechBubble}
             />

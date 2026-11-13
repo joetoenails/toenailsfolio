@@ -14,7 +14,7 @@ const roles = [
   "marriage officiant",
   "dungeon master",
   "project manager",
-  "volunteer organizer",
+  "park volunteer",
 ];
 
 const mobilePages = roles.map((role) => {
@@ -38,8 +38,15 @@ const mobilePages = roles.map((role) => {
   );
 });
 
-const MobileRoleCall = ({ setSelectedRole, setSpeechBubble }) => {
-  const [index, set] = React.useState(0);
+const MobileRoleCall = ({
+  selectedRole,
+  setSelectedRole,
+  setSpeechBubble,
+}) => {
+  const selectedRoleIndex = roles.indexOf(selectedRole);
+  const [index, set] = React.useState(
+    selectedRoleIndex === -1 ? 0 : selectedRoleIndex
+  );
 
   const nextTitle = () => {
     let newIdx = (index + 1) % roles.length;
